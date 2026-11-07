@@ -1,0 +1,35 @@
+
+body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#111;background:#f6f7f9;line-height:1.6}
+header{background:#111318;color:#fff;padding:2rem 6%}header a{color:#fff}
+.brand{font-weight:700;letter-spacing:.04em;text-decoration:none}
+nav.top{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;font-size:.95rem;margin-bottom:.8rem}
+nav.top a{opacity:.85;text-decoration:none}nav.top a:hover{opacity:1;text-decoration:underline}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:.4rem 0 .8rem;max-width:52rem;line-height:1.2}
+p.lead{max-width:52rem;opacity:.85;font-size:1.1rem}
+.cta{display:inline-block;background:#ff6a3d;color:#fff;font-weight:700;padding:.8rem 1.2rem;border-radius:10px;text-decoration:none;margin-top:.6rem}
+main{padding:2rem 6%}
+.trade{background:#fff;border-radius:14px;padding:1.2rem;margin-bottom:1.5rem;box-shadow:0 1px 4px #0001}
+.trade h2{margin:.1rem 0 .4rem;font-size:1.35rem}
+.trade h2 a{color:#111;text-decoration:none}.trade h2 a:hover{color:#c2410c}
+.trade p{margin:.2rem 0 .8rem;color:#444}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.thumb{background:#f6f7f9;border-radius:10px;overflow:hidden;border:1px solid #e3e5ea}
+.thumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.thumb .cap{padding:.5rem .7rem;font-size:.9rem;color:#333}
+.thumb a{color:#111;text-decoration:none}.thumb a:hover{color:#c2410c}
+.ex{background:#fff;border-radius:14px;padding:1.4rem;margin-bottom:1.6rem;box-shadow:0 1px 4px #0001}
+.ex .shot{border-radius:10px;border:1px solid #e3e5ea;width:100%;max-width:800px;display:block;margin:.4rem 0 1rem}
+.ex h2{margin:.1rem 0 .2rem;font-size:1.4rem}
+.ex .loc{color:#555;font-size:.95rem;margin:0 0 .6rem}
+.ex .fact{background:#fff7f3;border-left:4px solid #ff6a3d;padding:.7rem 1rem;border-radius:0 8px 8px 0;margin:.6rem 0 1rem;max-width:46rem}
+.ex h3{margin:1rem 0 .3rem;font-size:1.05rem}
+.ex ul{margin:.2rem 0 .6rem;padding-left:1.2rem;max-width:46rem}
+.ex li{margin:.25rem 0}
+.ex .ext{font-size:.9rem;color:#555;word-break:break-all}
+.ex .ext a{color:#c2410c}
+.note{background:#fff;border-radius:14px;padding:1.2rem 1.4rem;box-shadow:0 1px 4px #0001;max-width:52rem}
+.note h2{margin-top:0}
+.ctabox{border:2px solid #ff6a3d;border-radius:14px;padding:1.2rem 1.4rem;margin:2rem 0;background:#fffaf7;max-width:52rem}
+.ctabox h3{margin-top:0}
+.small{font-size:.92rem;color:#444}
+footer{padding:2rem 6%;color:#666;font-size:.9rem}
