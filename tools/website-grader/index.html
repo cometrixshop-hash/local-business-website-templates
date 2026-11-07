@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Website Grader — Check Your Site in 30 Seconds</title>
+<meta name="description" content="Free website grader: paste your URL and get an instant 0-100 score for HTTPS, mobile viewport, title and meta description, H1, contact options, image alt text, page weight and a mobile-friendliness heuristic. Best-effort automated check.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/tools/website-grader/">
+<meta property="og:type" content="article"><meta property="og:title" content="Free Website Grader"><meta property="og:description" content="Paste your URL and get an instant 0-100 score plus concrete fixes. Free, runs in your browser."><meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/tools/website-grader/">
+<link rel="stylesheet" href="../tools.css">
+<style>
+.grader{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;background:#fff;border-radius:14px;padding:1.4rem;box-shadow:0 1px 4px #0001;margin-bottom:2rem}
+@media(max-width:820px){.grader{grid-template-columns:1fr}}
+.grader .fields label{display:block;margin:.55rem 0;font-size:.95rem;font-weight:600}
+.grader .fields input,.grader .fields select,.grader .fields textarea{width:100%;box-sizing:border-box;margin-top:.25rem;padding:.55rem .7rem;border:1px solid #d3d6dd;border-radius:8px;font:inherit;font-weight:400}
+.grader .fields button{background:#ff6a3d;color:#fff;border:0;border-radius:8px;padding:.65rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;margin-top:.8rem}
+.grader .fields button:hover{background:#e05320}
+.grader .fields button:disabled{opacity:.6;cursor:wait}
+.lights{list-style:none;padding:0;margin:0;max-width:72rem}
+.light{display:flex;align-items:flex-start;gap:.7rem;padding:.7rem .8rem;border-bottom:1px solid #eceef2;font-size:.95rem}
+.light:last-child{border-bottom:0}
+.dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+.light.pass .dot{background:#2e7d32}
+.light.warn .dot{background:#e6a23c}
+.light.fail .dot{background:#c62828}
+.light-main{flex:1}
+.light-main strong{display:block}
+.light-detail{color:#444;font-size:.9rem;display:block;margin-top:.15rem}
+.pts{font-size:.85rem;color:#666;font-weight:600;white-space:nowrap}
+.score-band{font-size:1rem;font-weight:700;margin-top:.3rem}
+.score-band.green{color:#2e7d32}.score-band.amber{color:#9a6a12}.score-band.red{color:#c62828}
+.meta{font-size:.88rem;color:#555;margin-top:.8rem;line-height:1.5}
+.meta code{background:#f0f1f4;padding:.1rem .3rem;border-radius:4px;font-size:.85em}
+.disclaimer{background:#fff7f3;border-left:4px solid #ff6a3d;padding:.8rem 1rem;border-radius:0 8px 8px 0;font-size:.92rem;margin:1rem 0;max-width:72rem}
+.fixes{background:#fff;border:1px solid #e3e5ea;border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;max-width:72rem}
+.fixes ol{margin:.4rem 0 0 1.2rem;padding:0}
+.self-score{background:#111318;color:#fff;border-radius:14px;padding:1.2rem 1.4rem;margin:1.4rem 0;max-width:52rem}
+.self-score .big{color:#fff}
+.self-score .sub{color:#c9cdd4}
+.status{font-size:.9rem;color:#555;margin-top:.6rem;min-height:1.2rem}
+.status.err{color:#c62828}
+.status.ok{color:#2e7d32}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Free Website Grader", "description": "Paste your URL and get an instant 0-100 score for HTTPS, mobile viewport, title and meta description, H1, contact options, image alt text, page weight and mobile-friendliness. Best-effort automated check.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/website-grader/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/"}, {"@type": "ListItem", "position": 3, "name": "Free Website Grader", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/website-grader/"}]}</script>
+</head><body>
+<header><nav class="top"><a class="brand" href="../">COMETRIX WEB STUDIO</a><a href="../">Templates</a><a href="../guides/">Guides</a><a href="../examples/">Examples</a><a href="../tools/index.html">Free tools</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($49)</a></nav>
+<h1>Free Website Grader</h1>
+<p class="lead">Paste your website address and get an instant score out of 100, plus the specific things holding it back. It checks HTTPS, the mobile viewport, your title and meta description, your H1, contact options, image alt text, page weight and a mobile-friendliness heuristic. Runs in your browser. This is an automated first pass, not a full audit.</p>
+</header>
+<main>
+<div class="grader">
+<div class="fields">
+<label>Website URL <input id="f-url" type="text" placeholder="https://yourbusiness.com" value="https://example.com"></label>
+<label>Business name (optional) <input id="f-name" type="text" placeholder="e.g. Acme Plumbing"></label>
+<label>Category / trade (optional) <input id="f-cat" type="text" placeholder="e.g. Plumbing, HVAC, Landscaping"></label>
+<button id="run" type="button">Grade my website</button>
+<p class="hint">Optional fields let us check whether your business name and trade show up in your title or H1, which matters for local search.</p>
+<p class="status" id="fetch-status">Enter a URL and press "Grade my website".</p>
+</div>
+<div class="out">
+<div class="outbar"><strong>Your grade</strong></div>
+<div class="result">
+<div class="big" id="score">–</div>
+<div class="sub" id="score-label">No result yet.</div>
+<div class="score-band" id="score-band"></div>
+</div>
+<div class="meta" id="meta-info"></div>
+</div>
+</div>
+
+<section id="checks-section" hidden>
+<h2>What we checked</h2>
+<ul class="lights" id="lights"></ul>
+<div class="fixes" id="fixes"></div>
+<div class="disclaimer">This is an automated first pass, not a full audit. It reads one HTML page and cannot see JavaScript-rendered content, your real loading speed, tap-target sizes, or accessibility details. For a page-by-page review by a person, see the $149 audit below.</div>
+</section>
+
+<aside class="ctabox">
+<h3>Want a real audit done for you?</h3>
+<p>The grader above is a quick first pass. If you want someone to review your site page by page, fix the problems and hand back a clear report, the <strong>$149 Website Audit for Local Service Businesses</strong> does exactly that. Prefer to rebuild instead? The <strong>$49 template pack</strong> gives you ten mobile-first sites with tap-to-call, contact forms and SEO schema already in place.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/csdqke">Get the $149 audit →</a></p>
+<p class="small">Or <a href="https://cometrix.gumroad.com/l/nqqxk">get the template pack ($49)</a> · Read the free <a href="../guides/website-speed-mobile-checklist/">website speed checklist</a>, <a href="../guides/local-seo-checklist-service-businesses/">local SEO checklist</a> and <a href="../guides/fix-not-secure-warning-https/">guide to fixing the Not Secure warning</a>.</p>
+</aside>
+
+<section id="selfcheck-section">
+<h2>Could not fetch your site? Grade it yourself</h2>
+<p class="hint">Some sites block automated checks, and free relays can be slow or rate-limited. If the automatic check fails, answer these 9 questions about your site and get the same 0-100 score. Self-reported, so be honest — it is only as good as your answers.</p>
+<div class="checklist">
+<label><input type="checkbox" data-w="10"> The site loads over HTTPS (no "Not secure" warning)</label>
+<label><input type="checkbox" data-w="12"> The page has a viewport meta tag (width=device-width)</label>
+<label><input type="checkbox" data-w="14"> The page has a title of 10-70 characters</label>
+<label><input type="checkbox" data-w="14"> The page has a meta description of 50-160 characters</label>
+<label><input type="checkbox" data-w="10"> The page has exactly one H1 heading</label>
+<label><input type="checkbox" data-w="15"> There is a tap-to-call link or a contact form</label>
+<label><input type="checkbox" data-w="10"> All images have alt text</label>
+<label><input type="checkbox" data-w="10"> The HTML page is under about 100 KB</label>
+<label><input type="checkbox" data-w="5"> It looks usable on a phone without zooming</label>
+</div>
+<div class="self-score"><div class="big" id="self-score">0 / 100</div><div class="sub" id="self-score-msg">Tick the items that are true of your site.</div></div>
+</section>
+
+<section class="faq">
+<h2>Frequently asked questions</h2>
+<h3>How does the automatic check work?</h3>
+<p>This is a static site, so there is no server doing the checking. Your browser fetches your page and analyses its HTML. Because most websites do not allow cross-origin requests from a browser, the tool tries your site directly first and then falls back to free public relays (Jina Reader, AllOrigins, CodeTabs). If all of them fail, the self-checklist above takes over.</p>
+<h3>Why did it fail to fetch my site?</h3>
+<p>Relays can be slow or rate-limited, and some sites (heavy JavaScript apps, sites behind firewalls or CDNs, login pages) do not return usable HTML to automated requests. That is not your fault and does not mean your site is broken. Use the checklist above, or run <a href="https://pagespeed.web.dev/">PageSpeed Insights</a> for a deeper look.</p>
+<h3>What counts as a good score?</h3>
+<p>80 or above is a solid foundation. 50-79 means real room to improve. Below 50 means serious issues are likely costing you calls. The score is a first pass — a high score does not guarantee a good site, and a low score always deserves a closer look.</p>
+<h3>Does this send my URL anywhere?</h3>
+<p>Yes, to fetch your page it must be requested by a relay service (or directly by your browser when the site allows it). Nothing is stored by us, and no account or sign-up is involved. If that matters for you, use the self-checklist instead.</p>
+<h3>Is this a full audit?</h3>
+<p>No. It reads one HTML page and cannot judge your real loading speed, tap-target sizes, colour contrast, screen-reader behaviour, or content quality. It is an automated first pass, not a full audit.</p>
+<h3>How do I improve a low score?</h3>
+<p>Start with the top fixes listed above, then work through the free guides linked below. If you would rather have it done for you, the $149 audit reviews your site page by page, and the $49 template pack ships with all of these basics already in place.</p>
+</section>
+</main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · This grader is general guidance, not a professional audit. Scores are best-effort and can vary with relay availability.</footer>
+<script>
+(function(){
+  'use strict';
+  var $=function(id){return document.getElementById(id);};
+  var urlEl=$('f-url'), nameEl=$('f-name'), catEl=$('f-cat'), runBtn=$('run');
+  var scoreEl=$('score'), scoreLabel=$('score-label'), scoreBand=$('score-band');
+  var statusEl=$('fetch-status'), metaEl=$('meta-info'), lightsEl=$('lights'), fixesEl=$('fixes');
+  var checksSection=$('checks-section');
+  var selfBoxes=document.querySelectorAll('#selfcheck-section input[type=checkbox]');
+  var selfScore=$('self-score'), selfMsg=$('self-score-msg');
+
+  var RELAYS=[
+    {name:'direct', url:function(u){return u;}},
+    {name:'Jina Reader', url:function(u){return 'https://r.jina.ai/'+u;}, headers:{'X-Return-Format':'html'}},
+    {name:'AllOrigins', url:function(u){return 'https://api.allorigins.win/raw?url='+encodeURIComponent(u);}},
+    {name:'CodeTabs', url:function(u){return 'https://api.codetabs.com/v1/proxy/?quest='+encodeURIComponent(u);}}
+  ];
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function trunc(s,n){s=String(s);return s.length>n?s.slice(0,n-1)+'…':s;}
+
+  function looksHtml(t){
+    if(!t || t.length<80) return false;
+    if(/<title>\s*(error|invalid url|not found|403|404|500|502|503)/i.test(t) && t.length<2500) return false;
+    if(/<html[\s>]/i.test(t) || /<!doctype html/i.test(t)) return true;
+    if(/<head[\s>]/i.test(t) || /<body[\s>]/i.test(t)) return true;
+    return false;
+  }
+
+  function candidates(raw){
+    var u=raw.trim();
+    var list=[];
+    if(/^https:\/\//i.test(u)) list.push({url:u,https:true});
+    else if(/^http:\/\//i.test(u)){ list.push({url:u.replace(/^http:/i,'https:'),https:true}); list.push({url:u,https:false}); }
+    else { list.push({url:'https://'+u,https:true}); list.push({url:'http://'+u,https:false}); }
+    return list;
+  }
+
+  function timeoutFetch(u, ms, headers){
+    var ctrl=new AbortController();
+    var t=setTimeout(function(){try{ctrl.abort();}catch(e){}}, ms);
+    var opts={signal:ctrl.signal, credentials:'omit', cache:'no-store'};
+    if(headers) opts.headers=headers;
+    return fetch(u,opts).then(function(r){clearTimeout(t);return r;}, function(e){clearTimeout(t);throw e;});
+  }
+
+  function fetchPage(raw){
+    var cands=candidates(raw);
+    var started=Date.now();
+    var seq=Promise.resolve(null);
+    cands.forEach(function(c){
+      RELAYS.forEach(function(rel){
+        seq=seq.then(function(res){
+          if(res) return res;
+          if(Date.now()-started>70000) return null;
+          var u=rel.url(c.url);
+          return timeoutFetch(u, rel.name==='direct'?7000:16000, rel.headers).then(function(r){
+            if(!r.ok) throw new Error('HTTP '+r.status);
+            return r.text().then(function(t){
+              if(!looksHtml(t)) throw new Error('not html');
+              return {html:t, url:c.url, scheme:c.https, relay:rel.name, bytes:new TextEncoder().encode(t).length, ms:Date.now()-started};
+            });
+          }).catch(function(){return null;});
+        });
+      });
+    });
+    return seq.then(function(res){ if(!res) throw new Error('fetch failed'); return res; });
+  }
+
+  function visibleText(doc){
+    if(!doc.body) return '';
+    var c=doc.body.cloneNode(true);
+    var kill=c.querySelectorAll('script,style,noscript,template,svg');
+    for(var i=0;i<kill.length;i++){ if(kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]); }
+    return (c.textContent||'').replace(/\s+/g,' ');
+  }
+
+  function grade(res, opts){
+    var doc=new DOMParser().parseFromString(res.html,'text/html');
+    var checks=[];
+    function add(name,w,earned,status,detail,fix){ checks.push({name:name,weight:w,earned:earned,status:status,detail:detail,fix:fix}); }
+    var txt=visibleText(doc);
+
+    // HTTPS
+    add('HTTPS',10, res.scheme?10:0, res.scheme?'pass':'fail',
+      res.scheme?'Loaded over HTTPS — no "Not secure" warning.':'Loaded over plain HTTP — browsers flag this as "Not secure".',
+      'Enable HTTPS. GitHub Pages, Netlify and Cloudflare Pages all include a free certificate. See our guide to fixing the Not Secure warning.');
+
+    // Viewport
+    var vp=doc.querySelector('meta[name="viewport"]');
+    var vpc=vp?(vp.getAttribute('content')||''):'';
+    var hasDW=/width\s*=\s*device-width/i.test(vpc);
+    var noZoom=/maximum-scale\s*=\s*1|user-scalable\s*=\s*no/i.test(vpc);
+    if(!vp) add('Viewport meta tag',12,0,'fail','No viewport meta tag — phones show the desktop layout shrunk.','Add <meta name="viewport" content="width=device-width, initial-scale=1"> in the <head>.');
+    else if(hasDW) add('Viewport meta tag',12,12,'pass','Viewport meta tag present with width=device-width.');
+    else add('Viewport meta tag',12,6,'warn','Viewport tag found but it does not set width=device-width.','Update it to content="width=device-width, initial-scale=1".');
+
+    // Title
+    var tEl=doc.querySelector('title');
+    var t=tEl?(tEl.textContent||'').replace(/\s+/g,' ').trim():'';
+    if(!t) add('Page title',14,0,'fail','No <title> tag — search engines will guess one.','Add a unique title of 10-70 characters with your service and city.');
+    else {
+      var L=t.length, pts, st;
+      if(L>=10 && L<=70){pts=14;st='pass';}
+      else if(L<10){pts=10;st='warn';}
+      else {pts=11;st='warn';}
+      add('Page title',14,pts,st,'Title is '+L+' characters: "'+trunc(t,60)+'"'+(L<10?' (too short)':(L>70?' (too long)':'')),'Rewrite the title to 10-70 characters: service + city + business name.');
+    }
+
+    // Meta description
+    var mdEl=doc.querySelector('meta[name="description"]');
+    var md=mdEl?(mdEl.getAttribute('content')||'').replace(/\s+/g,' ').trim():'';
+    if(!md) add('Meta description',14,0,'fail','No meta description — search engines will guess one.','Add a meta description of 50-160 characters summarising the page.');
+    else {
+      var M=md.length, pts2, st2;
+      if(M>=50 && M<=160){pts2=14;st2='pass';}
+      else if(M<50){pts2=10;st2='warn';}
+      else {pts2=11;st2='warn';}
+      add('Meta description',14,pts2,st2,'Description is '+M+' characters'+(M<50?' (too short)':(M>160?' (too long)':''))+'.','Rewrite the meta description to 50-160 characters with a clear call to action.');
+    }
+
+    // H1
+    var h1s=doc.querySelectorAll('h1');
+    if(h1s.length===1) add('H1 heading',10,10,'pass','One H1: "'+trunc(h1s[0].textContent,60)+'"','Add one clear H1 with your main service and city.');
+    else if(h1s.length>1) add('H1 heading',10,6,'warn',h1s.length+' H1 headings — use one main heading per page.','Pick one H1 per page and demote the rest to H2.');
+    else add('H1 heading',10,0,'fail','No H1 heading — the page has no clear main topic.','Add one H1 containing your service and city.');
+
+    // Contact
+    var form=!!doc.querySelector('form');
+    var tel=!!doc.querySelector('a[href^="tel:" i]');
+    var mail=!!doc.querySelector('a[href^="mailto:" i]');
+    var phone=/((\+?\d{1,3}[\s.-]?)?(\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4})/.test(txt);
+    if(form||tel||phone){
+      var how=[]; if(form) how.push('contact form'); if(tel||phone) how.push('phone number');
+      add('Contact options',15,15,'pass','Found a '+how.join(' and ')+'.','Add a tap-to-call link (<a href="tel:...">) and a contact form.');
+    } else if(mail){
+      add('Contact options',15,8,'warn','Only an email link found — a phone number or form gets more calls.','Add a tap-to-call link and a contact form so visitors can reach you in one tap.');
+    } else {
+      add('Contact options',15,0,'fail','No phone number, form or email link found.','Add a tap-to-call link (<a href="tel:...">) and a contact form.');
+    }
+
+    // Image alt
+    var imgs=doc.querySelectorAll('img');
+    var missing=0;
+    for(var i=0;i<imgs.length;i++){ var a=imgs[i].getAttribute('alt'); if(a===null) missing++; }
+    if(imgs.length===0) add('Image alt text',10,10,'pass','No images found (nothing to check).','Add descriptive alt text to every image.');
+    else {
+      var earned=Math.round(10*(imgs.length-missing)/imgs.length);
+      var st3 = missing===0?'pass':(missing/imgs.length<0.5?'warn':'fail');
+      add('Image alt text',10,earned,st3, (imgs.length-missing)+' of '+imgs.length+' images have alt text ('+missing+' missing).','Add alt text to every meaningful image; use alt="" for purely decorative ones.');
+    }
+
+    // Page weight
+    var kb=Math.round(res.bytes/1024);
+    var wpts, wst;
+    if(kb<100){wpts=10;wst='pass';}
+    else if(kb<250){wpts=6;wst='warn';}
+    else if(kb<1024){wpts=3;wst='warn';}
+    else {wpts=0;wst='fail';}
+    add('Page weight (HTML)',10,wpts,wst,'HTML document is about '+kb+' KB (images, CSS and JS not counted).','Trim the HTML, remove unused code and compress images. Aim for under 100 KB of HTML.');
+
+    // Mobile heuristic
+    var mpts=0; var mnotes=[];
+    if(vp && hasDW) mpts+=3; else mnotes.push('no proper viewport');
+    if(vp && !noZoom) mpts+=1; else if(noZoom) mnotes.push('zoom disabled');
+    var fixed=0;
+    var re=/style\s*=\s*["'][^"']*width\s*:\s*(\d{3,})px/gi; var m;
+    while((m=re.exec(res.html))!==null){ if(parseInt(m[1],10)>480) fixed++; }
+    var re2=/<table[^>]*width\s*=\s*["']?(\d{3,})/gi;
+    while((m=re2.exec(res.html))!==null){ if(parseInt(m[1],10)>480) fixed++; }
+    if(fixed===0) mpts+=1; else mnotes.push(fixed+' fixed-width signal(s)');
+    var mst = mpts>=5?'pass':(mpts>=3?'warn':'fail');
+    add('Mobile-friendliness',5,mpts,mst,'Mobile heuristic: '+mpts+'/5'+(mnotes.length?' ('+mnotes.join(', ')+').':'.'),'Use a responsive layout with no fixed widths above 480 px and keep zoom enabled.');
+
+    // Optional business name
+    var name=(opts.name||'').trim();
+    if(name){
+      var hay=(t+' '+(h1s.length?h1s[0].textContent:'')).toLowerCase();
+      var nl=name.toLowerCase();
+      var first=nl.split(/\s+/)[0];
+      var ok=hay.indexOf(nl)>=0 || (first.length>=4 && hay.indexOf(first)>=0);
+      add('Business name in title/H1',5,ok?5:0,ok?'pass':'fail',
+        ok?'"'+name+'" appears in the title or H1.':'"'+name+'" does not appear in the title or H1.',
+        'Put your business name in the title or H1 so local searchers see who you are.');
+    }
+    // Optional category
+    var cat=(opts.cat||'').trim();
+    if(cat){
+      var hay2=(t+' '+(h1s.length?h1s[0].textContent:'')).toLowerCase();
+      var ok2=hay2.indexOf(cat.toLowerCase())>=0;
+      add('Service/trade in title/H1',5,ok2?5:0,ok2?'pass':'fail',
+        ok2?'"'+cat+'" appears in the title or H1.':'"'+cat+'" does not appear in the title or H1.',
+        'Mention what you do (e.g. "'+cat+'") in the title or H1.');
+    }
+
+    return {checks:checks, total:checks.reduce(function(s,c){return s+c.weight;},0), earned:checks.reduce(function(s,c){return s+c.earned;},0)};
+  }
+
+  function bandColor(score){
+    if(score>=80) return 'green';
+    if(score>=50) return 'amber';
+    return 'red';
+  }
+  function bandLabel(score){
+    if(score>=80) return 'Solid foundation';
+    if(score>=50) return 'Needs work';
+    return 'Serious issues';
+  }
+
+  function renderResult(res){
+    var g=grade(res,{name:nameEl.value, cat:catEl.value});
+    var score=Math.round(100*g.earned/g.total);
+    scoreEl.textContent=score+' / 100';
+    scoreLabel.textContent=bandLabel(score)+' — '+g.earned+' of '+g.total+' points.';
+    scoreBand.textContent=''; scoreBand.className='score-band '+bandColor(score);
+    scoreBand.textContent=bandLabel(score);
+
+    var meta=[];
+    meta.push('Fetched: <code>'+esc(res.url)+'</code>');
+    meta.push('Method: '+esc(res.relay)+(res.relay==='direct'?' (no relay)':' (public relay)'));
+    meta.push('Document size: '+Math.round(res.bytes/1024)+' KB of HTML');
+    meta.push('Time: '+ (res.ms/1000).toFixed(1)+'s');
+    metaEl.innerHTML=meta.join('<br>');
+
+    lightsEl.innerHTML=g.checks.map(function(c){
+      return '<li class="light '+c.status+'"><span class="dot"></span><div class="light-main"><strong>'+esc(c.name)+'</strong><span class="light-detail">'+esc(c.detail)+'</span></div><span class="pts">'+c.earned+'/'+c.weight+'</span></li>';
+    }).join('');
+
+    var fixable=g.checks.filter(function(c){return c.earned<c.weight;}).sort(function(a,b){return (b.weight-b.earned)-(a.weight-a.earned);});
+    var top=fixable.slice(0,3);
+    if(top.length===0) fixesEl.innerHTML='<strong>No major issues found.</strong> Keep it up — and run <a href="https://pagespeed.web.dev/">PageSpeed Insights</a> for a deeper check of real loading speed.';
+    else fixesEl.innerHTML='<strong>Top fixes (highest impact first):</strong><ol>'+top.map(function(c){return '<li>'+esc(c.fix)+'</li>';}).join('')+'</ol>';
+
+    checksSection.hidden=false;
+    checksSection.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  function run(){
+    var u=urlEl.value.trim();
+    if(!u){ statusEl.textContent='Enter a website address first.'; statusEl.className='status err'; return; }
+    runBtn.disabled=true;
+    statusEl.textContent='Fetching '+u+' (trying direct, then public relays)…';
+    statusEl.className='status';
+    scoreEl.textContent='…';
+    scoreLabel.textContent='Working…';
+    scoreBand.textContent='';
+    metaEl.innerHTML='';
+    checksSection.hidden=true;
+    var started=Date.now();
+    fetchPage(u).then(function(res){
+      runBtn.disabled=false;
+      statusEl.textContent='Fetched via '+res.relay+' in '+((Date.now()-started)/1000).toFixed(1)+'s.';
+      statusEl.className='status ok';
+      renderResult(res);
+    }).catch(function(e){
+      runBtn.disabled=false;
+      statusEl.textContent='Could not fetch the page automatically. Answer the checklist below instead.';
+      statusEl.className='status err';
+      scoreEl.textContent='–';
+      scoreLabel.textContent='Fetch failed — use the self-checklist below.';
+      scoreBand.textContent='';
+      metaEl.innerHTML='Automatic check unavailable. This is common for JavaScript-heavy sites, sites behind CDNs or when relays are rate-limited.';
+    });
+  }
+
+  runBtn.addEventListener('click', run);
+  urlEl.addEventListener('keydown', function(e){ if(e.key==='Enter') run(); });
+
+  // self-check
+  function selfRender(){
+    var total=0, got=0;
+    selfBoxes.forEach(function(b){ total+= +b.dataset.w; if(b.checked) got+= +b.dataset.w; });
+    var s=total?Math.round(100*got/total):0;
+    selfScore.textContent=s+' / 100';
+    var msg = s>=80?'Solid foundation (self-reported).': (s>=50?'Needs work (self-reported).':'Serious issues (self-reported).');
+    selfMsg.textContent=msg+' Tick more boxes as you fix things.';
+  }
+  selfBoxes.forEach(function(b){ b.addEventListener('change', selfRender); });
+  selfRender();
+})();
+</script>
+</body></html>
