@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Point Your Domain at a New Website (DNS in Plain English)</title>
+<meta name="description" content="The DNS records that matter (A, CNAME, MX), how to connect a domain to GitHub Pages, Netlify or Cloudflare Pages, propagation times, HTTPS, and how not to break your email.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/guides/point-your-domain-to-new-website-dns/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Point Your Domain at a New Website (DNS in Plain English)"><meta property="og:description" content="The DNS records that matter (A, CNAME, MX), how to connect a domain to GitHub Pages, Netlify or Cloudflare Pages, propagation times, HTTPS, and how not to break your email."><meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/guides/point-your-domain-to-new-website-dns/"><meta property="og:image" content="https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Point Your Domain at a New Website (DNS in Plain English)", "description": "The DNS records that matter (A, CNAME, MX), how to connect a domain to GitHub Pages, Netlify or Cloudflare Pages, propagation times, HTTPS, and how not to break your email.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/point-your-domain-to-new-website-dns/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to Point Your Domain at a New Website (DNS in Plain English)", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/point-your-domain-to-new-website-dns/"}]}</script>
+<style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#111;background:#f6f7f9}
+header{background:#111318;color:#fff;padding:2.2rem 6%}header a{color:#fff}.brand{font-weight:700;letter-spacing:.04em;text-decoration:none}
+nav.top{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;font-size:.95rem}nav.top a{opacity:.85;text-decoration:none}nav.top a:hover{opacity:1;text-decoration:underline}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:1.2rem 0 .6rem;max-width:48rem;line-height:1.2}.meta{opacity:.7;font-size:.9rem}
+main{padding:2rem 6%}.wrap{max-width:46rem;background:#fff;border-radius:14px;padding:1.6rem clamp(1.1rem,4vw,2.4rem);box-shadow:0 1px 4px #0001}
+.wrap p,.wrap li{line-height:1.75;font-size:1.05rem}.wrap h2{margin-top:2.2rem;line-height:1.3}.wrap h3{margin-top:1.6rem}
+p.lead{font-size:1.15rem;color:#333}a{color:#c2410c}blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid #ff6a3d;background:#fff7f3}
+pre{background:#111318;color:#e9ecf1;padding:1rem;border-radius:10px;overflow-x:auto;font-size:.88rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+p code,li code,td code{background:#f0f1f4;padding:.1rem .3rem;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}th,td{border:1px solid #e3e5ea;padding:.5rem;text-align:left;vertical-align:top}th{background:#f6f7f9}
+.ctabox{border:2px solid #ff6a3d;border-radius:14px;padding:1.2rem 1.4rem;margin:2.2rem 0;background:#fffaf7}.ctabox h3{margin-top:0}
+.cta{display:inline-block;background:#ff6a3d;color:#fff;font-weight:700;padding:.8rem 1.2rem;border-radius:10px;text-decoration:none}.small{font-size:.92rem;color:#444}
+.related{margin-top:2.4rem;border-top:1px solid #e3e5ea;padding-top:1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;max-width:72rem}.card{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 1px 4px #0001}.card h2{font-size:1.15rem;margin:.2rem 0 .5rem}.card a{text-decoration:none}.card p{line-height:1.6;color:#333}
+footer{padding:2rem 6%;color:#666;font-size:.9rem}</style></head><body>
+<header><nav class="top"><a class="brand" href="../../">COMETRIX WEB STUDIO</a><a href="../../">Templates</a><a href="../../guides/">Guides</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($49)</a></nav><h1>How to Point Your Domain at a New Website (DNS in Plain English)</h1><div class="meta">Published 2026-11-07 · Cometrix Web Studio guides</div></header>
+<main><article class="wrap">
+<p class="lead">Getting a new website online usually ends with the same confusing step: pointing your domain name at the new host. This is DNS, and it is much less scary than it sounds. This guide explains the few records that matter, the two ways to connect a domain, and how to avoid the classic mistake of breaking your email while fixing your website.</p>
+
+<h2>The one idea behind DNS</h2>
+
+<p>A domain name is just an address that humans can read. DNS (the Domain Name System) is the phone book that translates it into the numbers and destinations computers use. When you "point a domain," you are editing a few records at your <strong>DNS provider</strong> — usually the company you bought the domain from, or whoever hosts your DNS zone.</p>
+
+<p>The records you will actually touch:</p>
+
+<table>
+<tr><th>Record</th><th>What it does</th><th>Example</th></tr>
+<tr><td><code>A</code></td><td>Points a name to an IPv4 address</td><td><code>example.com → 185.199.108.153</code></td></tr>
+<tr><td><code>AAAA</code></td><td>Points a name to an IPv6 address</td><td><code>example.com → 2606:50c0:8000::153</code></td></tr>
+<tr><td><code>CNAME</code></td><td>Points a name to another name</td><td><code>www.example.com → you.github.io</code></td></tr>
+<tr><td><code>TXT</code></td><td>Free-form text, used for verification and email</td><td><code>"v=spf1 ..."</code></td></tr>
+<tr><td><code>MX</code></td><td>Says where email for the domain is delivered</td><td><code>example.com → mail provider</code></td></tr>
+</table>
+
+<p>Two of these do almost all the work for a website: <code>A</code> (or <code>AAAA</code>) for the bare domain, and <code>CNAME</code> for the <code>www</code> version.</p>
+
+<h2>Two ways to connect</h2>
+
+<h3>Option A: change nameservers (move all DNS to the new host)</h3>
+
+<p>Some hosts — Netlify, Cloudflare, many managed platforms — ask you to replace the nameservers at your registrar with theirs. After that, every record (website, email, everything) is managed in that host's dashboard.</p>
+
+<p>Pros: one place to manage everything, and the host can add records automatically. Cons: if you miss a record, something else on the domain breaks — most commonly email. Before you change nameservers, <strong>write down every existing record</strong>, especially <code>MX</code>, <code>TXT</code> and any <code>CNAME</code> used for email or a subdomain.</p>
+
+<h3>Option B: keep your current DNS and add records</h3>
+
+<p>You can leave DNS where it is and just add the records your new host tells you. This is the lower-risk option for most small businesses, because your email records stay untouched.</p>
+
+<h2>Pointing at GitHub Pages</h2>
+
+<p>GitHub's <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" rel="noopener">custom domain documentation</a> gives exact values. The steps:</p>
+
+<ol>
+<li><strong>Add the domain in GitHub first.</strong> In your repository: Settings → Pages → Custom domain → type the domain → Save. GitHub recommends this order so nobody else can claim your subdomain.</li>
+<li><strong>For a subdomain</strong> such as <code>www.example.com</code>, create a <code>CNAME</code> record pointing to your Pages domain: <code>you.github.io</code> (no repository name, no <code>www</code> on the target).</li>
+<li><strong>For the bare domain</strong> <code>example.com</code>, create four <code>A</code> records pointing to GitHub's addresses:</li>
+</ol>
+
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153</code></pre>
+
+<p>Some DNS providers offer an <code>ALIAS</code> or <code>ANAME</code> record, which does the same job as an <code>A</code> record at the bare domain. If yours does, use it and point it at your Pages domain. GitHub also supports <code>AAAA</code> records if you want IPv6; it recommends keeping the <code>A</code> records too, because IPv6 adoption is still uneven.</p>
+
+<p>GitHub recommends setting up both the bare domain and <code>www</code>. When both are configured correctly, GitHub Pages redirects one to the other automatically, so visitors reach your site either way.</p>
+
+<h2>Pointing at Netlify or Cloudflare Pages</h2>
+
+<p>These platforms typically want a <code>CNAME</code> for <code>www</code> (or an <code>ALIAS</code>/<code>ANAME</code> for the bare domain) pointing at the site's assigned hostname, such as <code>your-site.netlify.app</code>. Both also support connecting by nameservers. Check the platform's current custom-domain documentation for the exact target, because the assigned hostname is specific to your site.</p>
+
+<aside class="ctabox"><h3>Skip the blank page: start from a ready-made template</h3>
+<p>The <strong>Local Business Website Template Pack</strong> includes ten mobile-first, plain HTML/CSS sites (plumbing, HVAC, landscaping, salon, auto repair, dental, roofing, cleaning, electrician and pest control) with tap-to-call buttons, service area and FAQ sections, a Formspree/Netlify-ready contact form with a spam honeypot, and LocalBusiness schema already in place. Edit the text, add your photos, and publish on free hosting.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">See the template pack ($49)</a></p>
+<p class="small">Rather not do it yourself? We also offer a <a href="https://cometrix.gumroad.com/l/bpjuu">done-for-you website refresh in 5 days</a>.</p></aside>
+
+<h2>How long it takes</h2>
+
+<p>DNS changes are not instant. GitHub's documentation says changes can take up to 24 hours to propagate; other providers commonly say up to 48 hours. In practice it is often a few minutes to a couple of hours. During that window some visitors see the old site and some see the new one, which is normal.</p>
+
+<p>You can check progress yourself. On macOS or Linux, <code>dig</code> is built in:</p>
+
+<pre><code>$ dig example.com +noall +answer -t A
+$ dig www.example.com +noall +answer -t CNAME</code></pre>
+
+<p>GitHub's docs use the same commands to verify configuration. If <code>dig</code> returns the new address, your change has taken effect for you; others may take longer.</p>
+
+<h2>The email trap</h2>
+
+<p>This is the most common way a domain move goes wrong. Email for your domain is controlled by <code>MX</code> records (and often <code>TXT</code> records for spam protection). If you delete or overwrite those while adding website records, email stops arriving — sometimes silently, with no bounce.</p>
+
+<p>Rules that prevent it:</p>
+
+<ul>
+<li><strong>Never delete an <code>MX</code> record</strong> unless you are deliberately moving email.</li>
+<li>When adding website records, add them alongside the existing ones. <code>A</code>, <code>CNAME</code> and <code>MX</code> records for the same name can coexist.</li>
+<li>If you change nameservers, re-create every <code>MX</code> and <code>TXT</code> record from your old DNS zone before the cutover.</li>
+<li>Test email right after the change: send a message to your domain address from a Gmail or Outlook account and confirm it arrives in your inbox and not in spam.</li>
+<li>If you use Google Workspace or Microsoft 365, verify your setup with their admin checkup tools, which will flag missing or incorrect records.</li>
+</ul>
+
+<h2>HTTPS comes with the domain</h2>
+
+<p>Once the domain points at GitHub Pages, Netlify or Cloudflare Pages, HTTPS is provisioned automatically. On GitHub Pages, the "Enforce HTTPS" checkbox appears after the certificate is ready — GitHub says that can take up to 24 hours. Until it is, visitors may see a browser warning, which is exactly the problem you are trying to fix, so check it before you send anyone the new address. For background on why this matters, see <a href="../fix-not-secure-warning-https/">Why a 'Not secure' warning costs you customers</a>.</p>
+
+<h2>Checklist</h2>
+
+<ol>
+<li>Write down your current <code>MX</code> and <code>TXT</code> records before touching anything.</li>
+<li>Add the custom domain in your host's settings (GitHub: repo Settings → Pages).</li>
+<li>Add the <code>A</code> records (bare domain) and/or <code>CNAME</code> (www) your host specifies.</li>
+<li>Wait, then verify with <code>dig</code> or the host's own check.</li>
+<li>Confirm HTTPS shows a padlock with no warning.</li>
+<li>Send a test email to your domain address and check the inbox and spam folder.</li>
+<li>Check the site on a phone over mobile data, not just your office Wi-Fi.</li>
+</ol>
+
+<p>If anything looks wrong, you can always point the records back to where they were — DNS is reversible, it just takes time to propagate again. If you would rather have someone handle the whole move, the <a href="https://cometrix.gumroad.com/l/bpjuu">website refresh service</a> includes pointing your existing domain at the new site.</p>
+
+<section class="related"><h2>More guides</h2><ul><li><a href="../plumbing-business-website-free-hosting/">How to Make a Website for a Plumbing Business (and Host It Free)</a></li><li><a href="../hvac-website-checklist/">What Every HVAC Website Needs to Get More Calls: A 12-Point Checklist</a></li><li><a href="../local-seo-checklist-service-businesses/">Local SEO Checklist for Small Service Businesses: Google Business Profile, NAP and Schema</a></li><li><a href="../free-static-website-hosting-github-pages-netlify-cloudflare/">How to Host a Small Business Website Free on GitHub Pages, Netlify or Cloudflare Pages</a></li><li><a href="../static-site-contact-form-formspree-netlify/">How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)</a></li><li><a href="../fix-not-secure-warning-https/">Why a &#x27;Not Secure&#x27; Warning Costs You Customers, and How to Fix It</a></li><li><a href="../how-to-get-google-reviews-ethically/">How to Get More Google Reviews: The Rules, and What Actually Works</a></li><li><a href="../website-copy-that-gets-calls/">How to Write Website Copy That Gets Calls: A Plain-English Guide</a></li></ul><p><a href="../">All guides</a> · <a href="../../">Template previews</a></p></section></article></main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · Guides are general information, not legal advice; check each provider's current terms and pricing.</footer></body></html>
