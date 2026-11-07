@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Title &amp; Meta Description Length Checker (Free Tool)</title>
+<meta name="description" content="Free tool: check your page title and meta description lengths against Google's display limits. Paste your title and description, see how they'll look in search results, and get instant feedback.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/tools/meta-checker/">
+<meta property="og:type" content="article"><meta property="og:title" content="Title &amp; Meta Description Length Checker (Free Tool)"><meta property="og:description" content="Check your page title and meta description lengths against Google's display limits. Free, instant, in-browser.">
+<meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/tools/meta-checker/">
+<link rel="stylesheet" href="tools.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Title & Meta Description Length Checker", "description": "Check your page title and meta description lengths against Google's display limits. Free, instant, in-browser.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/meta-checker/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/"}, {"@type": "ListItem", "position": 3, "name": "Title & Meta Description Length Checker", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/meta-checker/"}]}</script>
+</head><body>
+<header><nav class="top"><a class="brand" href="../">COMETRIX WEB STUDIO</a><a href="../">Templates</a><a href="../guides/">Guides</a><a href="../examples/">Examples</a><a href="index.html">Free tools</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($49)</a></nav>
+<h1>Title &amp; Meta Description Checker</h1>
+<p class="lead">Google truncates long titles and descriptions in search results. Check yours against the limits and see a preview of how it will actually look. Runs in your browser — nothing is sent anywhere.</p>
+</header>
+<main>
+<div class="tool">
+<div class="fields">
+<label>Page title <input id="f-title" type="text" value="How to Choose a Domain Name for Your Small Business (and Avoid the Mistakes)"></label>
+<label>Meta description <textarea id="f-desc" rows="4">How to pick a domain name that is short, sayable and easy to spell: .com vs local TLDs, hyphens and numbers to avoid, trademark checks, registration, auto-renew and who should own it.</textarea></label>
+<label>URL <input id="f-url" type="text" value="https://example.com/guides/domain-name"></label>
+</div>
+<div class="out">
+<div class="outbar"><strong>Search preview</strong></div>
+<div class="serp">
+<div class="serp-url" id="s-url">example.com › guides › domain-name</div>
+<div class="serp-title" id="s-title">How to Choose a Domain Name for Your Small Business (and Avoid the Mistakes)</div>
+<div class="serp-desc" id="s-desc">How to pick a domain name that is short, sayable and easy to spell: .com vs local TLDs, hyphens and numbers to avoid, trademark checks, registration, auto-renew and who should own it.</div>
+</div>
+<div class="meters">
+<div class="meter"><div class="meter-head"><span>Title</span><span id="c-title">0 / 60</span></div><div class="bar"><div id="b-title" class="fill"></div></div><div class="msg" id="m-title"></div></div>
+<div class="meter"><div class="meter-head"><span>Description</span><span id="c-desc">0 / 160</span></div><div class="bar"><div id="b-desc" class="fill"></div></div><div class="msg" id="m-desc"></div></div>
+</div>
+</div>
+</div>
+<aside class="ctabox"><h3>Want SEO done for you?</h3>
+<p>Every template in the <strong>Local Business Website Template Pack</strong> ships with correctly sized SEO meta, Open Graph tags and LocalBusiness schema already in place.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">Get the template pack ($49)</a></p>
+<p class="small">Read our <a href="../guides/website-copy-that-gets-calls/">guide to writing website copy that gets calls</a>.</p></aside>
+<section class="faq">
+<h2>Frequently asked questions</h2>
+<h3>What are the limits?</h3>
+<p>Google typically shows about <strong>50–60 characters</strong> of a page title and about <strong>150–160 characters</strong> of a meta description before truncating with an ellipsis. The exact cutoff varies by device and query, so staying under these is the safe target.</p>
+<h3>Does Google always use my meta description?</h3>
+<p>No. Google may rewrite it if it thinks another part of your page answers the search better. A well-written description still helps because it's often used as-is, and it's what people read when deciding whether to click.</p>
+<h3>Should my title start with my business name?</h3>
+<p>Usually put the topic first and your brand last, separated by a dash or pipe: <em>Service in City | Business Name</em>. That way the useful words appear before the cutoff. Put your brand first only if brand recognition is the main goal.</p>
+<h3>Is this tool sending my text anywhere?</h3>
+<p>No. Everything runs in your browser. Your titles and descriptions never leave this page.</p>
+</section>
+</main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · Character limits are general guidance based on Google's typical display behavior and can change; verify with Google's own documentation.</footer>
+<script>
+(function(){
+  var title=document.getElementById('f-title'), desc=document.getElementById('f-desc'), url=document.getElementById('f-url');
+  var sTitle=document.getElementById('s-title'), sDesc=document.getElementById('s-desc'), sUrl=document.getElementById('s-url');
+  var cTitle=document.getElementById('c-title'), cDesc=document.getElementById('c-desc');
+  var bTitle=document.getElementById('b-title'), bDesc=document.getElementById('b-desc');
+  var mTitle=document.getElementById('m-title'), mDesc=document.getElementById('m-desc');
+  var TITLE_MAX=60, DESC_MAX=160;
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function breadcrumb(u){
+    try{ var p=new URL(u); var parts=p.pathname.split('/').filter(Boolean); return p.hostname+' › '+(parts.join(' › ')||''); }
+    catch(e){ return String(u).replace(/^https?:\/\//,''); }
+  }
+  function paint(input, out, count, bar, msg, max, label){
+    var len=input.value.length;
+    out.textContent=input.value||'(empty)';
+    count.textContent=len+' / '+max;
+    var pct=Math.min(100,Math.round(len/max*100));
+    bar.style.width=pct+'%';
+    bar.className='fill '+(len===0?'zero':len>max?'over':len>max*0.9?'near':'ok');
+    if(len===0) msg.textContent=label+' is empty. Search engines will guess, and usually badly.';
+    else if(len>max) msg.textContent='Too long — about '+len+' characters. It will be cut off. Aim for '+max+' or fewer.';
+    else if(len>max*0.9) msg.textContent='Close to the limit. It will probably fit, but there is little room to spare.';
+    else msg.textContent='Good length.';
+    msg.className='msg '+bar.className;
+  }
+  function render(){
+    paint(title,sTitle,cTitle,bTitle,mTitle,TITLE_MAX,'Title');
+    paint(desc,sDesc,cDesc,bDesc,mDesc,DESC_MAX,'Description');
+    sUrl.textContent=breadcrumb(url.value);
+  }
+  [title,desc,url].forEach(function(el){ el.addEventListener('input',render); });
+  render();
+})();
+</script>
+</body></html>

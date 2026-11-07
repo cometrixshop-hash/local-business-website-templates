@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LocalBusiness JSON-LD Schema Generator (Free Tool)</title>
+<meta name="description" content="Free tool: generate correct LocalBusiness JSON-LD schema for a small business website. Fill in your details, copy the code, paste it into your page. Works for plumbers, HVAC, dental, salons and more.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/tools/schema-generator/">
+<meta property="og:type" content="article"><meta property="og:title" content="LocalBusiness JSON-LD Schema Generator (Free Tool)"><meta property="og:description" content="Generate correct LocalBusiness JSON-LD schema for a small business website. Free, no sign-up, copy and paste.">
+<meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/tools/schema-generator/">
+<link rel="stylesheet" href="tools.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "LocalBusiness JSON-LD Schema Generator", "description": "Generate correct LocalBusiness JSON-LD schema for a small business website. Free, no sign-up, copy and paste.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/schema-generator/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/"}, {"@type": "ListItem", "position": 3, "name": "LocalBusiness JSON-LD Schema Generator", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/schema-generator/"}]}</script>
+</head><body>
+<header><nav class="top"><a class="brand" href="../">COMETRIX WEB STUDIO</a><a href="../">Templates</a><a href="../guides/">Guides</a><a href="../examples/">Examples</a><a href="index.html">Free tools</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($49)</a></nav>
+<h1>LocalBusiness JSON-LD Generator</h1>
+<p class="lead">Fill in your business details and get ready-to-paste structured data. Search engines use this to understand your business — your name, address, phone, hours and services. No sign-up, nothing is sent anywhere: it runs entirely in this page.</p>
+</header>
+<main>
+<div class="tool">
+<div class="fields">
+<label>Business name <input id="f-name" type="text" value="Example Plumbing Co."></label>
+<label>Category
+<select id="f-type">
+<option value="Plumber">Plumber</option>
+<option value="HVACBusiness">HVAC / Heating &amp; Cooling</option>
+<option value="RoofingContractor">Roofing Contractor</option>
+<option value="Dentist">Dentist</option>
+<option value="AutoRepair">Auto Repair</option>
+<option value="HouseCleaningService">House Cleaning</option>
+<option value="Electrician">Electrician</option>
+<option value="PestControlService">Pest Control</option>
+<option value="Landscaper">Landscaper</option>
+<option value="Salon">Hair / Nail Salon</option>
+<option value="GeneralContractor">General Contractor</option>
+<option value="LocalBusiness" selected>Local Business (generic)</option>
+</select></label>
+<label>Street address <input id="f-street" type="text" value="123 Main St"></label>
+<label>Apartment / suite <input id="f-unit" type="text" value=""></label>
+<label>City <input id="f-city" type="text" value="Austin"></label>
+<label>State <input id="f-state" type="text" value="TX"></label>
+<label>ZIP <input id="f-zip" type="text" value="78701"></label>
+<label>Country <input id="f-country" type="text" value="US"></label>
+<label>Phone <input id="f-phone" type="text" value="(512) 555-0100"></label>
+<label>Website URL <input id="f-url" type="text" value="https://example.com/"></label>
+<label>Logo URL <input id="f-logo" type="text" value="https://example.com/logo.png"></label>
+<label>Image URL <input id="f-image" type="text" value="https://example.com/shop.jpg"></label>
+<label>Price range <select id="f-price"><option value="">(none)</option><option value="$">$</option><option value="$$" selected>$$</option><option value="$$$">$$$</option><option value="$$$$">$$$$</option></select></label>
+<fieldset><legend>Opening hours (leave blank to omit)</legend>
+<label>Monday <input id="f-mon" type="text" value="08:00-17:00"></label>
+<label>Tuesday <input id="f-tue" type="text" value="08:00-17:00"></label>
+<label>Wednesday <input id="f-wed" type="text" value="08:00-17:00"></label>
+<label>Thursday <input id="f-thu" type="text" value="08:00-17:00"></label>
+<label>Friday <input id="f-fri" type="text" value="08:00-17:00"></label>
+<label>Saturday <input id="f-sat" type="text" value="09:00-14:00"></label>
+<label>Sunday <input id="f-sun" type="text" value=""></label>
+</fieldset>
+<label>Services (one per line, e.g. "Drain cleaning") <textarea id="f-services" rows="4">Drain cleaning
+Water heater repair
+Emergency plumbing</textarea></label>
+</div>
+<div class="out">
+<div class="outbar"><strong>Your JSON-LD</strong><button id="copy" type="button">Copy code</button></div>
+<pre id="json" tabindex="0"></pre>
+<p class="hint">Paste this into your page's <code>&lt;head&gt;</code>, ideally right before <code>&lt;/head&gt;</code>. Then test it with Google's <a href="https://search.google.com/test/rich-results">Rich Results Test</a> or the <a href="https://validator.schema.org/">Schema.org validator</a>.</p>
+</div>
+</div>
+<aside class="ctabox"><h3>Want the schema already done?</h3>
+<p>Every template in the <strong>Local Business Website Template Pack</strong> ships with LocalBusiness JSON-LD, SEO meta and Open Graph tags already filled in for its trade — edit the text, add your photos, publish.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">Get the template pack ($49)</a></p>
+<p class="small">Or read our <a href="../guides/local-seo-checklist-service-businesses/">local SEO checklist</a> to see where schema fits.</p></aside>
+<section class="faq">
+<h2>Frequently asked questions</h2>
+<h3>What is JSON-LD?</h3>
+<p>It's a small block of code that describes your business in a format search engines read directly. Unlike visible text, it's structured: name, address, phone, hours and services are labelled, so Google doesn't have to guess.</p>
+<h3>Will schema get me to #1 on Google?</h3>
+<p>No. Schema helps search engines understand your page; it is not a ranking boost by itself. It can make you eligible for richer search results (like a knowledge panel or business details), but rankings still come from relevance, quality and links.</p>
+<h3>Do I need a plugin for this?</h3>
+<p>No. You can paste the generated code into any HTML page. If your site is on WordPress, a plugin can add it automatically, but the code is the same.</p>
+<h3>Is my data sent anywhere by this tool?</h3>
+<p>No. Everything happens in your browser. The form never uploads your business details to us or anyone else.</p>
+</section>
+</main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · This tool generates general-purpose structured data, not legal or tax advice. Check Google's current structured-data guidelines before relying on rich results.</footer>
+<script>
+(function(){
+  var ids=['name','type','street','unit','city','state','zip','country','phone','url','logo','image','price','mon','tue','wed','thu','fri','sat','sun','services'];
+  var el={}; ids.forEach(function(k){ el[k]=document.getElementById('f-'+k); });
+  var json=document.getElementById('json'), copy=document.getElementById('copy');
+  var days=[['mon','Mo'],['tue','Tu'],['wed','We'],['thu','Th'],['fri','Fr'],['sat','Sa'],['sun','Su']];
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function val(k){return el[k].value.trim();}
+  function build(){
+    var o={'@context':'https://schema.org','@type':val('type')||'LocalBusiness'};
+    o.name=val('name');
+    if(val('url')) o.url=val('url');
+    if(val('phone')) o.telephone=val('phone');
+    if(val('logo')) o.logo=val('logo');
+    if(val('image')) o.image=val('image');
+    if(val('price')) o.priceRange=val('price');
+    var addr={'@type':'PostalAddress','streetAddress':[val('street'),val('unit')].filter(Boolean).join(', '),
+      'addressLocality':val('city'),'addressRegion':val('state'),'postalCode':val('zip'),'addressCountry':val('country')};
+    o.address=addr;
+    var specs=[];
+    days.forEach(function(d){ var v=val(d[0]); if(v) specs.push({'@type':'OpeningHoursSpecification','dayOfWeek':'https://schema.org/'+d[1],'opens':v.split('-')[0]||'','closes':v.split('-')[1]||''}); });
+    if(specs.length) o.openingHoursSpecification=specs;
+    var svcs=val('services').split('\n').map(function(s){return s.trim();}).filter(Boolean);
+    if(svcs.length) o.makesOffer=svcs.map(function(s){return {'@type':'Offer','itemOffered':{'@type':'Service','name':s}};});
+    return JSON.stringify(o,null,2);
+  }
+  function render(){ json.textContent='<script type="application/ld+json">\n'+build()+'\n</'+'script>'; }
+  ids.forEach(function(k){ el[k].addEventListener('input',render); el[k].addEventListener('change',render); });
+  copy.addEventListener('click',function(){
+    var t=json.textContent;
+    function done(){copy.textContent='Copied';setTimeout(function(){copy.textContent='Copy code';},1500);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback();});}else fallback();
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');done();}catch(e){} document.body.removeChild(ta); }
+  });
+  render();
+})();
+</script>
+</body></html>
