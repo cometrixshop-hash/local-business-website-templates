@@ -87,11 +87,10 @@
     var h=a.hours;
     var timeCost=h*rate;
     var copyCost=(f.copy.value==='yes')?copycost:a.copy;
-    if(f.approach.value==='pro'&&f.copy.value==='yes') copyCost=copycost;
     var rushCost=(f.rush.value==='yes')?Math.round(build*0.15):0;
-    var total=build+timeCost+copyCost+rushCost;
-    var yearly=domain+hosting+(f.approach.value==='diy'||f.approach.value==='template'?0:0);
-    total=money(total); sub.textContent='one-time build cost · '+a.label.toLowerCase();
+    var oneTime=build+timeCost+copyCost+rushCost;
+    var yearly=domain+hosting;
+    sub.textContent='one-time build cost · '+a.label.toLowerCase();
     var items=[
       ['Site build / service', build],
       ['Your time ('+h+' hrs × '+money(rate)+')', timeCost],
@@ -106,7 +105,7 @@
     var c=[];
     c.push('<strong>Compare:</strong> the same site done DIY would cost about <strong>'+money(APPROACH.diy.build+APPROACH.diy.hours*rate)+'</strong> in time and tools, while done-for-you is about <strong>'+money(APPROACH.pro.build+APPROACH.pro.hours*rate+APPROACH.pro.copy)+'</strong>. '+a.note);
     compare.innerHTML=c.join('');
-    total.textContent=money(build+timeCost+copyCost+rushCost);
+    total.textContent=money(oneTime);
   }
   Object.keys(f).forEach(function(k){ f[k].addEventListener('input',render); f[k].addEventListener('change',render); });
   render();
