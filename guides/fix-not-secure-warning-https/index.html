@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why a &#x27;Not Secure&#x27; Warning Costs You Customers, and How to Fix It</title>
+<meta name="description" content="What Chrome&#x27;s &#x27;Not secure&#x27; label and new HTTP warning screen mean for small business sites, and how to fix them with free HTTPS, redirects and mixed-content cleanup.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/guides/fix-not-secure-warning-https/">
+<meta property="og:type" content="article"><meta property="og:title" content="Why a &#x27;Not Secure&#x27; Warning Costs You Customers, and How to Fix It"><meta property="og:description" content="What Chrome&#x27;s &#x27;Not secure&#x27; label and new HTTP warning screen mean for small business sites, and how to fix them with free HTTPS, redirects and mixed-content cleanup."><meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/guides/fix-not-secure-warning-https/"><meta property="og:image" content="https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why a 'Not Secure' Warning Costs You Customers, and How to Fix It", "description": "What Chrome's 'Not secure' label and new HTTP warning screen mean for small business sites, and how to fix them with free HTTPS, redirects and mixed-content cleanup.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/fix-not-secure-warning-https/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/"}, {"@type": "ListItem", "position": 3, "name": "Why a 'Not Secure' Warning Costs You Customers, and How to Fix It", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/fix-not-secure-warning-https/"}]}</script>
+<style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#111;background:#f6f7f9}
+header{background:#111318;color:#fff;padding:2.2rem 6%}header a{color:#fff}.brand{font-weight:700;letter-spacing:.04em;text-decoration:none}
+nav.top{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;font-size:.95rem}nav.top a{opacity:.85;text-decoration:none}nav.top a:hover{opacity:1;text-decoration:underline}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:1.2rem 0 .6rem;max-width:48rem;line-height:1.2}.meta{opacity:.7;font-size:.9rem}
+main{padding:2rem 6%}.wrap{max-width:46rem;background:#fff;border-radius:14px;padding:1.6rem clamp(1.1rem,4vw,2.4rem);box-shadow:0 1px 4px #0001}
+.wrap p,.wrap li{line-height:1.75;font-size:1.05rem}.wrap h2{margin-top:2.2rem;line-height:1.3}.wrap h3{margin-top:1.6rem}
+p.lead{font-size:1.15rem;color:#333}a{color:#c2410c}blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid #ff6a3d;background:#fff7f3}
+pre{background:#111318;color:#e9ecf1;padding:1rem;border-radius:10px;overflow-x:auto;font-size:.88rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+p code,li code,td code{background:#f0f1f4;padding:.1rem .3rem;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}th,td{border:1px solid #e3e5ea;padding:.5rem;text-align:left;vertical-align:top}th{background:#f6f7f9}
+.ctabox{border:2px solid #ff6a3d;border-radius:14px;padding:1.2rem 1.4rem;margin:2.2rem 0;background:#fffaf7}.ctabox h3{margin-top:0}
+.cta{display:inline-block;background:#ff6a3d;color:#fff;font-weight:700;padding:.8rem 1.2rem;border-radius:10px;text-decoration:none}.small{font-size:.92rem;color:#444}
+.related{margin-top:2.4rem;border-top:1px solid #e3e5ea;padding-top:1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;max-width:72rem}.card{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 1px 4px #0001}.card h2{font-size:1.15rem;margin:.2rem 0 .5rem}.card a{text-decoration:none}.card p{line-height:1.6;color:#333}
+footer{padding:2rem 6%;color:#666;font-size:.9rem}</style></head><body>
+<header><nav class="top"><a class="brand" href="../../">COMETRIX WEB STUDIO</a><a href="../../">Templates</a><a href="../../guides/">Guides</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($39)</a></nav><h1>Why a &#x27;Not Secure&#x27; Warning Costs You Customers, and How to Fix It</h1><div class="meta">Published 2026-11-07 · Cometrix Web Studio guides</div></header>
+<main><article class="wrap">
+<p class="lead">If your business website shows "Not secure" next to its address, or worse, a full-page warning before it even loads, some visitors will simply leave. That's a lost customer you never hear about. The good news: the fix is usually free and often takes less than an hour. This guide explains what the warning means, why it matters more in late 2026 than ever, and how to fix it on common hosting setups.</p>
+
+<h2>What "Not secure" actually means</h2>
+
+<p>Websites can be delivered over plain <strong>HTTP</strong> or encrypted <strong>HTTPS</strong>. Google's Chrome team summarized the difference in their <a href="https://blog.google/products/chrome/milestone-chrome-security-marking-http-not-secure/" rel="noopener">2018 announcement</a>: when you load a site over plain HTTP, the connection isn't encrypted, so anyone on the network can look at information going back and forth, or even modify the contents of the site before it reaches you. With HTTPS, the connection is encrypted.</p>
+
+<p>"Not secure" doesn't mean your site has been hacked. It means the connection to it isn't protected. But a customer doesn't know that distinction. They see a warning on a business they were about to trust with their address and phone number.</p>
+
+<h2>How browser warnings have escalated</h2>
+
+<p>Chrome's warnings have tightened step by step over the past decade. The Chromium project's <a href="https://www.chromium.org/Home/chromium-security/marking-http-as-non-secure/" rel="noopener">timeline</a> lays it out:</p>
+
+<ul>
+<li><strong>January 2017 (Chrome 56):</strong> HTTP pages with a password field, or where the user interacts with a credit card field, are marked "Not Secure."</li>
+<li><strong>October 2017 (Chrome 62):</strong> the label also appears when a user types into any input field on an HTTP page, and on all HTTP pages in Incognito mode.</li>
+<li><strong>July 2018 (Chrome 68):</strong> all HTTP pages are marked "Not Secure."</li>
+<li><strong>October 2018 (Chrome 70):</strong> the label turns red when the user interacts with an input field on an HTTP page.</li>
+</ul>
+
+<p>And the biggest change is recent. In October 2025, Google <a href="https://blog.google/security/https-by-defau/" rel="noopener">announced</a> that with Chrome 154 in October 2026 it would turn on the "Always Use Secure Connections" setting by default, meaning Chrome asks the user's permission before the first visit to any public site without HTTPS. On October 21, 2026, Google <a href="https://blog.google/security/chrome-now-warns-before-insecure-http-connections/" rel="noopener">confirmed the rollout</a>: Chrome now explicitly asks users for permission before making an insecure HTTP connection, for all users by default.</p>
+
+<p>That's no longer a small label in the address bar. It's a warning screen with a "go back" option, shown before your page appears. The same post notes that, in early rollout data, nearly 95% of Chrome users on desktop don't see any HTTP warnings in a given week. In other words, most sites people visit are already secure, so a warning on yours stands out.</p>
+
+<h2>Why it costs you customers</h2>
+
+<p>We won't invent a percentage for how many visitors leave. There's no single reliable number, and it varies by audience. But the mechanism is easy to reason about:</p>
+
+<ul>
+<li><strong>Trust is the whole sale.</strong> Local service customers are deciding whether to let you into their home or hand you their car. A security warning undercuts that before you've said a word.</li>
+<li><strong>The warning appears at the worst moment.</strong> Phase two of Chrome's rollout ties the label to typing into a form, which is exactly when someone is about to send you a lead.</li>
+<li><strong>Competitors don't have it.</strong> If the next result in the search page loads without a warning, that's where the customer goes.</li>
+<li><strong>Content can be tampered with.</strong> Netlify's <a href="https://docs.netlify.com/manage/domains/secure-domains-with-https/https-ssl/" rel="noopener">HTTPS documentation</a> points out that without HTTPS, free Wi-Fi services can inject ads into your pages.</li>
+<li><strong>Search.</strong> Google <a href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal" rel="noopener">began using HTTPS as a ranking signal in 2014</a>. It described the signal as very lightweight at the time, so don't expect HTTPS alone to lift rankings, but there's no reason to give it up.</li>
+</ul>
+
+<h2>Step 1: Find out what's wrong</h2>
+
+<p>Open your site in Chrome and look at the address bar. You'll be in one of these situations:</p>
+
+<ol>
+<li><strong>The site only loads over <code>http://</code>.</strong> You don't have a certificate, or it isn't set up. Go to Step 2.</li>
+<li><strong>Both <code>http://</code> and <code>https://</code> work.</strong> You have a certificate, but visitors and old links still reach the insecure version. Go to Step 3.</li>
+<li><strong>HTTPS loads, but with a warning about the certificate</strong> (expired, wrong name). Go to Step 4.</li>
+<li><strong>HTTPS loads but some content is flagged</strong> or images are missing. That's mixed content. Go to Step 5.</li>
+</ol>
+
+<h2>Step 2: Get a certificate (usually free)</h2>
+
+<p>An HTTPS certificate used to be a paid add-on. Today, <a href="https://letsencrypt.org/about/" rel="noopener">Let's Encrypt</a>, a free, automated and open certificate authority run by the nonprofit Internet Security Research Group, provides them at no cost, and most hosts set them up automatically.</p>
+
+<ul>
+<li><strong>Netlify:</strong> its <a href="https://docs.netlify.com/manage/domains/secure-domains-with-https/https-ssl/" rel="noopener">docs</a> say it offers free HTTPS on all sites, automatically provisioning a Let's Encrypt certificate when you add a custom domain and renewing it as needed.</li>
+<li><strong>GitHub Pages:</strong> per GitHub's <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https" rel="noopener">HTTPS documentation</a>, all Pages sites, including correctly configured custom domains, support HTTPS. Note that the full domain must be under 64 characters for a certificate to be issued.</li>
+<li><strong>Cloudflare:</strong> Cloudflare's <a href="https://developers.cloudflare.com/ssl/" rel="noopener">SSL/TLS docs</a> say it automatically issues free certificates through Universal SSL.</li>
+<li><strong>Traditional shared hosting (cPanel and similar):</strong> look for an "SSL/TLS," "AutoSSL" or "Let's Encrypt" option in your control panel. If you can't find one, ask your host's support. If they want to charge a large fee for a basic certificate, that's a good reason to consider moving.</li>
+</ul>
+
+<p>If your site is a simple brochure site on an old, expensive host with no free certificate, moving to a static host can fix HTTPS and cut your hosting bill at the same time. See <a href="../free-static-website-hosting-github-pages-netlify-cloudflare/">How to host a small business website for free</a>.</p>
+
+<aside class="ctabox"><h3>Skip the blank page: start from a ready-made template</h3>
+<p>The <strong>Local Business Website Template Pack</strong> includes five mobile-first, plain HTML/CSS sites (plumbing, HVAC, landscaping, salon and auto repair) with tap-to-call buttons, service area and FAQ sections, a Formspree/Netlify-ready contact form with a spam honeypot, and LocalBusiness schema already in place. Edit the text, add your photos, and publish on free hosting.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">See the template pack ($39)</a></p>
+<p class="small">Rather not do it yourself? We also offer a <a href="https://cometrix.gumroad.com/l/bpjuu">done-for-you website refresh in 5 days</a>.</p></aside>
+
+<h2>Step 3: Force everyone onto HTTPS</h2>
+
+<p>Having a certificate isn't enough if <code>http://</code> still serves the page. Turn on redirection so every visit lands on the secure version:</p>
+
+<ul>
+<li><strong>GitHub Pages:</strong> Settings → Pages → check <strong>Enforce HTTPS</strong>. GitHub's docs describe this as transparently redirecting all HTTP requests to HTTPS.</li>
+<li><strong>Netlify and Cloudflare Pages:</strong> both serve sites over HTTPS once the certificate is active; check your domain settings to confirm.</li>
+<li><strong>Shared hosting:</strong> many control panels have a "Force HTTPS" toggle. Otherwise your host can tell you how to add a redirect rule.</li>
+</ul>
+
+<p>Then update the places you control: your Google Business Profile website field, social media profiles, email signature and directory listings should all use the <code>https://</code> address. Keeping these consistent is part of good local SEO too; see the <a href="../local-seo-checklist-service-businesses/">local SEO checklist</a>.</p>
+
+<h2>Step 4: Fix certificate errors</h2>
+
+<ul>
+<li><strong>Expired certificate:</strong> automatic hosts renew for you. If you installed a certificate manually, set up automatic renewal or switch to your host's free automatic option.</li>
+<li><strong>Name mismatch:</strong> the certificate must cover the exact address visitors use. A certificate for <code>example.com</code> may not cover <code>www.example.com</code>. Make sure both versions are added to your host so it can include them, and redirect one to the other.</li>
+<li><strong>Just connected a domain?</strong> Certificates are issued after DNS points to the host, so allow some time after a DNS change before troubleshooting.</li>
+</ul>
+
+<h2>Step 5: Clean up mixed content</h2>
+
+<p>MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content" rel="noopener">mixed content guide</a> defines it as a securely loaded page that fetches resources over HTTP. Browsers may block those resources or flag the page. Typical culprits on small business sites:</p>
+
+<ul>
+<li>Images linked with full <code>http://</code> URLs.</li>
+<li>Old embedded maps, videos or review widgets.</li>
+<li>Fonts or scripts loaded from <code>http://</code> addresses.</li>
+</ul>
+
+<p>The fix: search your HTML and CSS for <code>http://</code> and change each to <code>https://</code> (or to a relative path like <code>img/van.jpg</code> for your own files). If an embed doesn't offer HTTPS, replace it. Then reload the page with your browser's developer tools open; the console lists any remaining mixed-content warnings.</p>
+
+<h2>Step 6: Verify</h2>
+
+<ol>
+<li>Type <code>http://yourdomain.com</code> and <code>http://www.yourdomain.com</code> into the address bar. Both should end at the same <code>https://</code> address with no warning.</li>
+<li>Check on a phone as well as a computer.</li>
+<li>Submit your contact form and confirm nothing is flagged.</li>
+<li>In Google Search Console, make sure the <code>https://</code> version of your site is the one you've verified and submitted.</li>
+</ol>
+
+<h2>The bottom line</h2>
+
+<p>Browsers have spent nearly a decade moving from a small "Not secure" label to an outright warning screen, and as of October 2026 that screen is on by default in Chrome. Free certificates and automatic renewal mean there's no longer a cost barrier. If your site still loads over HTTP, fixing it is one of the cheapest and fastest improvements you can make, and it removes a reason for customers to leave before they've read a word.</p>
+
+<section class="related"><h2>More guides</h2><ul><li><a href="../plumbing-business-website-free-hosting/">How to Make a Website for a Plumbing Business (and Host It Free)</a></li><li><a href="../hvac-website-checklist/">What Every HVAC Website Needs to Get More Calls: A 12-Point Checklist</a></li><li><a href="../local-seo-checklist-service-businesses/">Local SEO Checklist for Small Service Businesses: Google Business Profile, NAP and Schema</a></li><li><a href="../free-static-website-hosting-github-pages-netlify-cloudflare/">How to Host a Small Business Website Free on GitHub Pages, Netlify or Cloudflare Pages</a></li><li><a href="../static-site-contact-form-formspree-netlify/">How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)</a></li></ul><p><a href="../">All guides</a> · <a href="../../">Template previews</a></p></section></article></main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · Guides are general information, not legal advice; check each provider's current terms and pricing.</footer></body></html>

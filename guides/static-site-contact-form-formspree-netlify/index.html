@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)</title>
+<meta name="description" content="Add a working contact form to a static HTML site with Formspree or Netlify Forms: copy-paste markup, honeypot spam protection, free plan limits and a testing checklist.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/guides/static-site-contact-form-formspree-netlify/">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)"><meta property="og:description" content="Add a working contact form to a static HTML site with Formspree or Netlify Forms: copy-paste markup, honeypot spam protection, free plan limits and a testing checklist."><meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/guides/static-site-contact-form-formspree-netlify/"><meta property="og:image" content="https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)", "description": "Add a working contact form to a static HTML site with Formspree or Netlify Forms: copy-paste markup, honeypot spam protection, free plan limits and a testing checklist.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/static-site-contact-form-formspree-netlify/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/guides/static-site-contact-form-formspree-netlify/"}]}</script>
+<style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;color:#111;background:#f6f7f9}
+header{background:#111318;color:#fff;padding:2.2rem 6%}header a{color:#fff}.brand{font-weight:700;letter-spacing:.04em;text-decoration:none}
+nav.top{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;font-size:.95rem}nav.top a{opacity:.85;text-decoration:none}nav.top a:hover{opacity:1;text-decoration:underline}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);margin:1.2rem 0 .6rem;max-width:48rem;line-height:1.2}.meta{opacity:.7;font-size:.9rem}
+main{padding:2rem 6%}.wrap{max-width:46rem;background:#fff;border-radius:14px;padding:1.6rem clamp(1.1rem,4vw,2.4rem);box-shadow:0 1px 4px #0001}
+.wrap p,.wrap li{line-height:1.75;font-size:1.05rem}.wrap h2{margin-top:2.2rem;line-height:1.3}.wrap h3{margin-top:1.6rem}
+p.lead{font-size:1.15rem;color:#333}a{color:#c2410c}blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid #ff6a3d;background:#fff7f3}
+pre{background:#111318;color:#e9ecf1;padding:1rem;border-radius:10px;overflow-x:auto;font-size:.88rem;line-height:1.5}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+p code,li code,td code{background:#f0f1f4;padding:.1rem .3rem;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}th,td{border:1px solid #e3e5ea;padding:.5rem;text-align:left;vertical-align:top}th{background:#f6f7f9}
+.ctabox{border:2px solid #ff6a3d;border-radius:14px;padding:1.2rem 1.4rem;margin:2.2rem 0;background:#fffaf7}.ctabox h3{margin-top:0}
+.cta{display:inline-block;background:#ff6a3d;color:#fff;font-weight:700;padding:.8rem 1.2rem;border-radius:10px;text-decoration:none}.small{font-size:.92rem;color:#444}
+.related{margin-top:2.4rem;border-top:1px solid #e3e5ea;padding-top:1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;max-width:72rem}.card{background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 1px 4px #0001}.card h2{font-size:1.15rem;margin:.2rem 0 .5rem}.card a{text-decoration:none}.card p{line-height:1.6;color:#333}
+footer{padding:2rem 6%;color:#666;font-size:.9rem}</style></head><body>
+<header><nav class="top"><a class="brand" href="../../">COMETRIX WEB STUDIO</a><a href="../../">Templates</a><a href="../../guides/">Guides</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($39)</a></nav><h1>How to Add a Contact Form to a Static Website (Formspree or Netlify Forms)</h1><div class="meta">Published 2026-11-07 · Cometrix Web Studio guides</div></header>
+<main><article class="wrap">
+<p class="lead">A static website (plain HTML, CSS and images) is fast, cheap to host and hard to break. Its one obvious gap is forms: there's no server-side code to receive a submission and email it to you. The fix is to hand that job to a form service. This guide shows the two most common approaches, Formspree and Netlify Forms, with working markup, spam protection and a testing checklist.</p>
+
+<h2>How static-site forms work</h2>
+
+<p>An HTML form sends its fields to whatever URL is in its <code>action</code> attribute. On a traditional site, that URL is a script on your own server. On a static site, you point it at a service that:</p>
+
+<ol>
+<li>receives the submission,</li>
+<li>filters out spam,</li>
+<li>stores it in a dashboard, and</li>
+<li>emails it to you.</li>
+</ol>
+
+<p>You write normal HTML. The only differences are the <code>action</code> URL (for Formspree) or a special attribute (for Netlify).</p>
+
+<h2>Before you start: design a form people will finish</h2>
+
+<p>For a local service business, a contact form is a lead form. Every extra field costs you some people who give up. A good default:</p>
+
+<ul>
+<li>Name</li>
+<li>Phone (and/or email)</li>
+<li>Town or ZIP code, so you can confirm it's in your area</li>
+<li>What do you need help with? (a short text box)</li>
+<li>Optional: preferred time to contact</li>
+</ul>
+
+<p>Use the right input types (<code>type="tel"</code>, <code>type="email"</code>) so phones show the right keyboard, give every field a visible <code>&lt;label&gt;</code>, and mark only the truly necessary fields <code>required</code>. Above the form, add a line for urgent jobs: "Emergency? Call (555) 555-0123." Forms are for jobs that can wait an hour.</p>
+
+<h2>Option A: Formspree (works on any host)</h2>
+
+<p>Formspree works on GitHub Pages, Cloudflare Pages, Netlify or any other host, because the form posts straight to Formspree's servers.</p>
+
+<h3>Setup</h3>
+<ol>
+<li>Create a Formspree account and verify your email.</li>
+<li>In the dashboard, create a new form. Formspree's <a href="https://help.formspree.io/articles/building-your-form/building-an-html-form" rel="noopener">HTML form guide</a> explains that your form's unique endpoint appears in the Integration section.</li>
+<li>Put that endpoint in your form's <code>action</code>. Formspree's docs say a form needs, at minimum, the action attribute with your endpoint and inputs with a <code>name</code> attribute; any element with a <code>name</code> is sent.</li>
+</ol>
+
+<h3>Markup</h3>
+<pre><code>&lt;form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" type="text" autocomplete="name" required&gt;
+
+  &lt;label for="phone"&gt;Phone&lt;/label&gt;
+  &lt;input id="phone" name="phone" type="tel" autocomplete="tel" required&gt;
+
+  &lt;label for="email"&gt;Email (optional)&lt;/label&gt;
+  &lt;input id="email" name="email" type="email" autocomplete="email"&gt;
+
+  &lt;label for="zip"&gt;ZIP code&lt;/label&gt;
+  &lt;input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code"&gt;
+
+  &lt;label for="message"&gt;What do you need help with?&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4" required&gt;&lt;/textarea&gt;
+
+  &lt;!-- Honeypot: hidden from people, tempting to bots --&gt;
+  &lt;input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"&gt;
+
+  &lt;button type="submit"&gt;Send request&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+<p>The <code>_gotcha</code> field is Formspree's honeypot. Its <a href="https://help.formspree.io/articles/building-your-form/honeypot-spam-filtering" rel="noopener">honeypot documentation</a> explains that a hidden input with that name catches automated scrapers that fill in every field.</p>
+
+<h3>Free plan limits</h3>
+<p>Formspree's <a href="https://formspree.io/plans" rel="noopener">plans page</a> lists the Free plan with 50 submissions per month, a 30-day submission archive, two linked emails and basic spam filtering. A custom "thank you" page isn't included on Free. For a small business that gets a few inquiries a week, 50 a month may be enough; if you're near the limit, the paid tiers raise it.</p>
+
+<h2>Option B: Netlify Forms (if you host on Netlify)</h2>
+
+<p>If your site is hosted on Netlify, you can skip the third-party service. Netlify's <a href="https://docs.netlify.com/manage/forms/setup/" rel="noopener">forms setup documentation</a> explains that its build system parses your HTML at deploy time and detects forms automatically, with no extra JavaScript or API calls.</p>
+
+<h3>Setup</h3>
+<ol>
+<li>In the Netlify UI, go to <strong>Forms</strong> and select <strong>Enable form detection</strong>. Detection starts with your next deploy.</li>
+<li>Add <code>data-netlify="true"</code> (or a <code>netlify</code> attribute) and a unique <code>name</code> to your form tag.</li>
+<li>Redeploy. Submissions appear under Forms in your site dashboard, and you can set up email notifications there.</li>
+</ol>
+
+<h3>Markup</h3>
+<pre><code>&lt;form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"&gt;
+  &lt;p hidden&gt;
+    &lt;label&gt;Don't fill this out: &lt;input name="bot-field"&gt;&lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name" type="text" required&gt;
+
+  &lt;label for="phone"&gt;Phone&lt;/label&gt;
+  &lt;input id="phone" name="phone" type="tel" required&gt;
+
+  &lt;label for="message"&gt;What do you need help with?&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4" required&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Send request&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+<p>A few details from Netlify's docs worth knowing:</p>
+<ul>
+<li>The form's <code>name</code> is what the form is called in the Netlify UI. If you have several forms, each needs a different name.</li>
+<li>During deploy, Netlify strips the <code>data-netlify</code> attribute and injects a hidden input named <code>form-name</code>. If your form is rendered by JavaScript rather than present in the HTML, you need to include that hidden field yourself and make sure a static copy of the form exists for detection.</li>
+<li>Per Netlify's <a href="https://docs.netlify.com/manage/forms/spam-filters/" rel="noopener">spam filter docs</a>, all submissions are filtered with Akismet, and you can add a honeypot field (as above, via <code>netlify-honeypot</code>) or a reCAPTCHA 2 challenge for extra protection.</li>
+<li>The <a href="https://docs.netlify.com/manage/forms/usage-and-billing/" rel="noopener">forms billing page</a> says forms are free and unlimited on credit-based plans; older legacy plans are metered differently.</li>
+</ul>
+
+<aside class="ctabox"><h3>Skip the blank page: start from a ready-made template</h3>
+<p>The <strong>Local Business Website Template Pack</strong> includes five mobile-first, plain HTML/CSS sites (plumbing, HVAC, landscaping, salon and auto repair) with tap-to-call buttons, service area and FAQ sections, a Formspree/Netlify-ready contact form with a spam honeypot, and LocalBusiness schema already in place. Edit the text, add your photos, and publish on free hosting.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">See the template pack ($39)</a></p>
+<p class="small">Rather not do it yourself? We also offer a <a href="https://cometrix.gumroad.com/l/bpjuu">done-for-you website refresh in 5 days</a>.</p></aside>
+
+<h2>Which should you use?</h2>
+
+<ul>
+<li><strong>Hosting on Netlify?</strong> Netlify Forms is the simplest: no extra account, and submissions live next to your site.</li>
+<li><strong>Hosting on GitHub Pages or Cloudflare Pages?</strong> Use Formspree. Cloudflare even publishes a <a href="https://developers.cloudflare.com/pages/tutorials/add-an-html-form-with-formspree/" rel="noopener">tutorial for adding a Formspree form to a Pages site</a>.</li>
+<li><strong>Might switch hosts later?</strong> Formspree moves with you, since it doesn't depend on the host.</li>
+</ul>
+
+<p>Not sure where to host yet? Compare the options in <a href="../free-static-website-hosting-github-pages-netlify-cloudflare/">How to host a small business website for free</a>.</p>
+
+<h2>Showing a thank-you message</h2>
+
+<p>By default, both services show their own confirmation page after a submission. Options for something friendlier:</p>
+<ul>
+<li><strong>Netlify:</strong> add an <code>action</code> attribute pointing to your own page, such as <code>action="/thanks/"</code>, and create that page.</li>
+<li><strong>Formspree:</strong> custom thank-you pages are a paid-plan feature according to its plans page, but Ajax forms are available on Free, so you can submit with JavaScript and show a message on the same page.</li>
+</ul>
+
+<p>Whatever you show, tell the person what happens next: "Thanks, we'll call you back within two business hours. If water is actively leaking, call us at (555) 555-0123."</p>
+
+<h2>Testing checklist before you rely on it</h2>
+
+<ol>
+<li>Submit the live form from your phone and from a computer.</li>
+<li>Confirm the email arrives, and check your spam folder. If it lands there, mark it "not spam" and add the sender to your contacts.</li>
+<li>Check that every field you care about shows up in the email. A missing <code>name</code> attribute is the most common reason a field doesn't arrive.</li>
+<li>Try submitting with a required field empty to make sure the browser stops it.</li>
+<li>Make sure the page is served over HTTPS. Chrome flags forms on insecure pages, and now <a href="https://blog.google/security/chrome-now-warns-before-insecure-http-connections/" rel="noopener">warns before connecting to HTTP sites at all</a>. See <a href="../fix-not-secure-warning-https/">our guide to fixing 'Not secure'</a>.</li>
+<li>Have someone outside your business test it once a month. Forms break silently when an email address changes or a free plan limit is hit.</li>
+</ol>
+
+<h2>Common problems and fixes</h2>
+
+<ul>
+<li><strong>Submissions never arrive (Netlify).</strong> Check that form detection is enabled and that you redeployed after enabling it. Netlify finds forms by parsing your HTML at deploy time, so a form that only exists after JavaScript runs won't be detected unless a static copy is present.</li>
+<li><strong>Submissions never arrive (Formspree).</strong> Confirm you verified your email address and that the <code>action</code> URL contains your exact form ID. Look in the Formspree dashboard: if submissions appear there but not in your inbox, the problem is email filtering, not the form.</li>
+<li><strong>Some fields are missing.</strong> Every input needs a <code>name</code> attribute. An <code>id</code> alone isn't sent.</li>
+<li><strong>Lots of spam.</strong> Make sure the honeypot field is present and hidden, and consider adding reCAPTCHA (both services support it). Avoid publishing your raw email address next to the form; it attracts spam on its own.</li>
+<li><strong>It worked last month but not now.</strong> Check whether you've hit a free plan's monthly limit, or whether the notification email address was changed.</li>
+</ul>
+
+<h2>Privacy basics</h2>
+
+<p>You're collecting names and phone numbers, so add a short line near the form explaining how you use them ("We only use your details to respond to your request"), and link to a privacy page if your region or industry requires one. Don't ask for sensitive information you don't need. GitHub's own documentation, for instance, notes that Pages sites <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits" rel="noopener">shouldn't be used for sensitive transactions</a> like passwords or credit card numbers, and a contact form has no business collecting those anyway.</p>
+
+<h2>Summary</h2>
+
+<p>Adding a working contact form to a static site takes about 15 minutes: pick Formspree or Netlify Forms, add the endpoint or attribute to an ordinary HTML form, include a honeypot, and test the whole path from the form to your inbox. That's all the "backend" most local service businesses need.</p>
+
+<section class="related"><h2>More guides</h2><ul><li><a href="../plumbing-business-website-free-hosting/">How to Make a Website for a Plumbing Business (and Host It Free)</a></li><li><a href="../hvac-website-checklist/">What Every HVAC Website Needs to Get More Calls: A 12-Point Checklist</a></li><li><a href="../local-seo-checklist-service-businesses/">Local SEO Checklist for Small Service Businesses: Google Business Profile, NAP and Schema</a></li><li><a href="../free-static-website-hosting-github-pages-netlify-cloudflare/">How to Host a Small Business Website Free on GitHub Pages, Netlify or Cloudflare Pages</a></li><li><a href="../fix-not-secure-warning-https/">Why a &#x27;Not Secure&#x27; Warning Costs You Customers, and How to Fix It</a></li></ul><p><a href="../">All guides</a> · <a href="../../">Template previews</a></p></section></article></main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · Guides are general information, not legal advice; check each provider's current terms and pricing.</footer></body></html>

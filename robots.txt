@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cometrixshop-hash.github.io/local-business-website-templates/sitemap.xml
