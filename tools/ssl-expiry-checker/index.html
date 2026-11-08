@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSL Certificate Expiry Checker (Free Tool)</title>
+<meta name="description" content="Free SSL certificate expiry checker: type your domain and see how many days until your HTTPS certificate expires, who issued it and when it is valid. Runs in your browser via public Certificate Transparency logs.">
+<link rel="canonical" href="https://cometrixshop-hash.github.io/local-business-website-templates/tools/ssl-expiry-checker/">
+<meta property="og:type" content="article"><meta property="og:title" content="SSL Certificate Expiry Checker (Free Tool)"><meta property="og:description" content="Type your domain and see how many days until your SSL certificate expires, plus issuer and validity dates. Free, runs in your browser.">
+<meta property="og:url" content="https://cometrixshop-hash.github.io/local-business-website-templates/tools/ssl-expiry-checker/">
+<link rel="stylesheet" href="../tools.css">
+<style>
+.ssl{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;background:#fff;border-radius:14px;padding:1.4rem;box-shadow:0 1px 4px #0001;margin-bottom:2rem}
+@media(max-width:820px){.ssl{grid-template-columns:1fr}}
+.ssl .fields label{display:block;margin:.55rem 0;font-size:.95rem;font-weight:600}
+.ssl .fields input{width:100%;box-sizing:border-box;margin-top:.25rem;padding:.55rem .7rem;border:1px solid #d3d6dd;border-radius:8px;font:inherit;font-weight:400}
+.ssl .fields button{background:#ff6a3d;color:#fff;border:0;border-radius:8px;padding:.65rem 1.1rem;font:inherit;font-weight:700;cursor:pointer;margin-top:.8rem}
+.ssl .fields button:hover{background:#e05320}
+.ssl .fields button:disabled{opacity:.6;cursor:wait}
+.status{font-size:1.05rem;font-weight:700;margin:.2rem 0 .6rem}
+.status.ok{color:#2e7d32}.status.warn{color:#9a6a12}.status.bad{color:#c62828}
+table.cert{width:100%;border-collapse:collapse;font-size:.93rem;margin-top:.4rem}
+table.cert th,table.cert td{border-bottom:1px solid #eceef2;padding:.5rem .4rem;text-align:left;vertical-align:top}
+table.cert th{background:#f6f7f9;width:11rem}
+.sans{font-size:.85rem;color:#444;word-break:break-all}
+.note{background:#fff7f3;border-left:4px solid #ff6a3d;padding:.8rem 1rem;border-radius:0 8px 8px 0;font-size:.92rem;margin-top:1rem}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "SSL Certificate Expiry Checker (Free Tool)", "description": "Type your domain and see how many days until your HTTPS certificate expires, who issued it and when it is valid. Runs in your browser via public Certificate Transparency logs.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "mainEntityOfPage": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/ssl-expiry-checker/", "image": "https://cometrixshop-hash.github.io/local-business-website-templates/img/cover.png", "author": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, "publisher": {"@type": "Organization", "name": "Cometrix Web Studio", "url": "https://cometrixshop-hash.github.io/local-business-website-templates/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/"}, {"@type": "ListItem", "position": 3, "name": "SSL Certificate Expiry Checker (Free Tool)", "item": "https://cometrixshop-hash.github.io/local-business-website-templates/tools/ssl-expiry-checker/"}]}</script>
+</head><body>
+<header><nav class="top"><a class="brand" href="../">COMETRIX WEB STUDIO</a><a href="../">Templates</a><a href="../guides/">Guides</a><a href="../examples/">Examples</a><a href="index.html">Free tools</a><a href="https://cometrix.gumroad.com/l/nqqxk">Get the pack ($49)</a></nav>
+<h1>SSL Certificate Expiry Checker</h1>
+<p class="lead">An expired SSL certificate makes browsers show a full-page "Not secure" warning in front of your customers — the fastest way to lose a phone call. Type your domain to see how many days your HTTPS certificate has left. Runs in your browser; the only network call is a public Certificate Transparency lookup.</p>
+</header>
+<main>
+<div class="ssl">
+<div class="fields">
+<label>Your domain <input id="f-domain" type="text" value="example.com" placeholder="yourbusiness.com" spellcheck="false"></label>
+<button id="f-check" type="button">Check certificate</button>
+<p class="hint">Examples: <code>google.com</code>, <code>www.plumber-near-me.com</code>. Include <code>www</code> if your site uses it — the certificate may be issued for the exact hostname.</p>
+<p class="note"><strong>Privacy:</strong> the domain you type is sent to <code>crt.sh</code>, a public Certificate Transparency log search, to look up the certificate. Nothing is stored by this page.</p>
+</div>
+<div class="out">
+<div class="outbar"><strong>Certificate status</strong><span id="o-src" class="hint"></span></div>
+<div class="result" id="o-result"><div class="big" id="o-days">–</div><div class="sub" id="o-sub">Enter a domain and press “Check certificate”.</div></div>
+<div class="status" id="o-status"></div>
+<div class="meter"><div class="meter-head"><span>Days until expiry</span><span id="o-count"></span></div><div class="bar"><div id="o-bar" class="fill zero"></div></div></div>
+<table class="cert" id="o-table" hidden>
+<tr><th>Domain queried</th><td id="t-domain"></td></tr>
+<tr><th>Issuer</th><td id="t-issuer"></td></tr>
+<tr><th>Valid from</th><td id="t-from"></td></tr>
+<tr><th>Valid until</th><td id="t-until"></td></tr>
+<tr><th>Subject names (SANs)</th><td class="sans" id="t-sans"></td></tr>
+</table>
+<p class="hint" id="o-hint"></p>
+</div>
+</div>
+<aside class="ctabox"><h3>HTTPS not set up yet?</h3>
+<p>Every template in the <strong>Local Business Website Template Pack</strong> ships ready for HTTPS on free GitHub Pages, Netlify or Cloudflare hosting — with auto-renewing certificates, so this warning never reaches your customers.</p>
+<p><a class="cta" href="https://cometrix.gumroad.com/l/nqqxk">Get the template pack ($49)</a></p>
+<p class="small">Read our <a href="../guides/fix-not-secure-warning-https/">guide to fixing the “Not secure” warning</a>.</p></aside>
+<section class="faq">
+<h2>Frequently asked questions</h2>
+<h3>How does this tool work?</h3>
+<p>It queries <a href="https://crt.sh">crt.sh</a>, a public search over Certificate Transparency logs, for certificates issued for your domain, picks the one with the latest expiry date and counts the days from today. All of the maths happens in your browser.</p>
+<h3>What do the colours mean?</h3>
+<p><strong>Green:</strong> more than 30 days left. <strong>Amber:</strong> 30 days or fewer — renew now. <strong>Red:</strong> 14 days or fewer, or already expired — treat as urgent. If you use Let’s Encrypt, certificates are valid for 90 days and renew automatically, so a low number is normal as long as renewal is working.</p>
+<h3>Why does it say “no certificate found”?</h3>
+<p>Certificate Transparency logs can lag by hours, and a brand-new or private certificate may not be logged yet. Retry in a few minutes, and check the exact hostname (with or without <code>www</code>). Your browser’s padlock is the final authority on what is actually served.</p>
+<h3>Is an expired certificate really that bad for a small business?</h3>
+<p>Yes. Chrome and Safari show a full-screen warning and many visitors leave immediately — on mobile, most do. If your site is HTTP-only or the certificate has lapsed, you are paying for ads and visits that never become calls.</p>
+<h3>How often should I check?</h3>
+<p>If your hosting auto-renews (GitHub Pages, Netlify, Cloudflare Pages, most managed hosts do), check once every few months or after any hosting change. If you install certificates by hand, check weekly.</p>
+</section>
+</main>
+<footer>© Cometrix Web Studio · cometrixshop@gmail.com · Certificate data comes from public Certificate Transparency logs via crt.sh and is best-effort; it can lag real deployments. Your browser performs its own trust check on every visit.</footer>
+<script>
+(function(){
+  var domain=document.getElementById('f-domain'), btn=document.getElementById('f-check');
+  var oDays=document.getElementById('o-days'), oSub=document.getElementById('o-sub'), oStatus=document.getElementById('o-status');
+  var oCount=document.getElementById('o-count'), oBar=document.getElementById('o-bar'), oSrc=document.getElementById('o-src');
+  var oTable=document.getElementById('o-table'), oHint=document.getElementById('o-hint');
+  var tDomain=document.getElementById('t-domain'), tIssuer=document.getElementById('t-issuer'), tFrom=document.getElementById('t-from'),
+      tUntil=document.getElementById('t-until'), tSans=document.getElementById('t-sans');
+  function norm(d){
+    d=String(d||'').trim().toLowerCase();
+    d=d.replace(/^https?:\/\//,'').replace(/^[a-z0-9+.-]+:\/\//,'').split('/')[0].split(':')[0];
+    return d;
+  }
+  function covers(entry, d){
+    var names=String(entry.name_value||'').split('\n');
+    for(var i=0;i<names.length;i++){
+      var n=names[i].trim().toLowerCase();
+      if(n===d) return true;
+      if(n.charAt(0)==='*'){ var base=n.slice(1); if(base.charAt(0)==='.' && (d===base.slice(1) || d.slice(-base.length)===base)) return true; }
+      if(n.indexOf('.')>0 && d.slice(-(n.length+1))==='.'+n) return true;
+    }
+    return false;
+  }
+  function parseDate(s){ var t=Date.parse(s); if(isNaN(t)){ t=Date.parse(String(s).replace(' ','T')+'Z'); } return t; }
+  function fmt(ts){ return new Date(ts).toUTCString().replace(' GMT',' UTC'); }
+  function fetchJson(url, ms){
+    var ctl=new AbortController();
+    var t=setTimeout(function(){ctl.abort();}, ms);
+    return fetch(url,{signal:ctl.signal,headers:{'Accept':'application/json'}}).then(function(r){
+      clearTimeout(t);
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json();
+    }).catch(function(e){ clearTimeout(t); throw e; });
+  }
+  function check(){
+    var d=norm(domain.value);
+    if(!d || d.indexOf('.')<0){ oSub.textContent='Type a real domain first, e.g. yourbusiness.com.'; return; }
+    btn.disabled=true; btn.textContent='Checking…';
+    oStatus.textContent=''; oStatus.className='status'; oHint.textContent='';
+    oTable.hidden=true; oBar.className='fill zero'; oBar.style.width='0';
+    oDays.textContent='…'; oSub.textContent='Querying Certificate Transparency logs for '+d+' (can take a few seconds)…';
+    oSrc.textContent='crt.sh';
+    var url='https://crt.sh/?q='+encodeURIComponent(d)+'&output=json';
+    fetchJson(url,45000).catch(function(){ return fetchJson(url,45000); }).then(function(list){
+      if(!Array.isArray(list) || !list.length) throw new Error('none');
+      var best=null;
+      for(var i=0;i<list.length;i++){
+        var e=list[i];
+        if(!covers(e,d)) continue;
+        var end=parseDate(e.not_after);
+        if(isNaN(end)) continue;
+        if(!best || end>best.end) best={entry:e,end:end,start:parseDate(e.not_before)};
+      }
+      if(!best) throw new Error('none');
+      var now=Date.now(), days=Math.floor((best.end-now)/86400000), frac=(best.end-now)%86400000;
+      if(frac>0) days+=1; // round up so "1 day left" never shows as 0
+      var names=String(best.entry.name_value||'').split('\n').map(function(s){return s.trim();}).filter(Boolean);
+      tDomain.textContent=d;
+      tIssuer.textContent=best.entry.issuer_name||'(unknown)';
+      tFrom.textContent=isNaN(best.start)?String(best.entry.not_before):fmt(best.start);
+      tUntil.textContent=fmt(best.end);
+      tSans.textContent=names.length+' name(s): '+names.slice(0,12).join(', ')+(names.length>12?' …':'');
+      oTable.hidden=false;
+      oCount.textContent=days+' day'+(days===1?'':'s');
+      var pct=Math.max(0,Math.min(100,Math.round(days/90*100)));
+      oBar.style.width=pct+'%';
+      if(days<0){
+        oDays.textContent='Expired'; oSub.textContent='This certificate expired '+(-days)+' day(s) ago.';
+        oStatus.textContent='✖ Expired — visitors see a “Not secure” warning. Renew immediately.'; oStatus.className='status bad';
+        oBar.className='fill over'; oCount.textContent='0 days';
+      } else if(days<=14){
+        oDays.textContent=days; oSub.textContent='day'+(days===1?'':'s')+' left on the certificate for '+d+'.';
+        oStatus.textContent='✖ Critical — 14 days or fewer left. Renew now.'; oStatus.className='status bad';
+        oBar.className='fill over';
+      } else if(days<=30){
+        oDays.textContent=days; oSub.textContent='day'+(days===1?'':'s')+' left on the certificate for '+d+'.';
+        oStatus.textContent='⚠ Warning — 30 days or fewer left. Schedule the renewal this week.'; oStatus.className='status warn';
+        oBar.className='fill near';
+      } else {
+        oDays.textContent=days; oSub.textContent='day'+(days===1?'':'s')+' left on the certificate for '+d+'.';
+        oStatus.textContent='✔ OK — more than 30 days left.'; oStatus.className='status ok';
+        oBar.className='fill ok';
+      }
+      oHint.textContent='Latest expiry found in CT logs for '+d+': '+fmt(best.end)+'. Certificates usually last 90–398 days; set auto-renewal so this never turns red.';
+    }).catch(function(err){
+      oDays.textContent='?'; oSub.textContent='Could not find a certificate for “'+d+'” right now.';
+      oStatus.textContent=''; oStatus.className='status';
+      oHint.textContent=(err && err.message==='none')
+        ? 'No logged certificate covers “'+d+'”. It may be brand new, private, or try the other hostname (with/without www). The padlock in your browser is the final check.'
+        : 'The CT log lookup failed or timed out ('+(err && err.message ? err.message : 'network')+'). crt.sh can be slow — press “Check certificate” to retry.';
+    }).then(function(){ btn.disabled=false; btn.textContent='Check certificate'; });
+  }
+  btn.addEventListener('click',check);
+  domain.addEventListener('keydown',function(e){ if(e.key==='Enter') check(); });
+})();
+</script>
+</body></html>
